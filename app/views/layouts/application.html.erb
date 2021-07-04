@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Teachershelper</title>
+    <title>Teacher's Helper</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,23 @@
   </head>
 
   <body>
+    
+    <li>
+      <%= link_to"生徒一覧", students_path %>
+    </li>
+    <li>
+      <%= link_to"講師一覧", teachers_path %>
+    </li>
+    <li>
+      <%= link_to"授業一覧", "" %>
+    </li>
+    <li>
+      <%= link_to"新規授業追加", ""%>
+    </li>
+    <li>
+      <%= link_to"ログアウト", destroy_user_session_path, method: :delete %>
+    </li>
+    
     <%= yield %>
   </body>
 </html>

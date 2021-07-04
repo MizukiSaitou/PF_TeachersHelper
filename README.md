@@ -22,14 +22,14 @@
 個別指導塾の運営時
 
 ## 設計書
-ER図
-<https://drive.google.com/file/d/1BuvmuBPhLjyY3mcPMvMvvS5MQ2eY7EJL/view?usp=sharing>
-テーブル定義書（途中）
-<https://drive.google.com/file/d/1GPJqAhUv8bmJmBsr-nSuXawMIVE3MiGz/view?usp=sharing>
-ワイヤーフレーム
-<https://drive.google.com/file/d/1kHLQK_NYFGVCMOLzU9Y31ObXuZciGloT/view?usp=sharing>
-画面遷移図
-<https://drive.google.com/file/d/10gmUbv2F7zSPFG_MKaCz6xfHhedUJu9w/view?usp=sharing>
+ER図.
+<https://drive.google.com/file/d/1BuvmuBPhLjyY3mcPMvMvvS5MQ2eY7EJL/view?usp=sharing>.
+テーブル定義書（途中）.
+<https://drive.google.com/file/d/1GPJqAhUv8bmJmBsr-nSuXawMIVE3MiGz/view?usp=sharing>.
+ワイヤーフレーム.
+<https://drive.google.com/file/d/1kHLQK_NYFGVCMOLzU9Y31ObXuZciGloT/view?usp=sharing>.
+画面遷移図.
+<https://drive.google.com/file/d/10gmUbv2F7zSPFG_MKaCz6xfHhedUJu9w/view?usp=sharing>.
 
 
 ## チャレンジ要素一覧
