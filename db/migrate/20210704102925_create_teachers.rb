@@ -7,8 +7,8 @@ class CreateTeachers < ActiveRecord::Migration[5.2]
       t.string :university,    null: false
       t.string :undergraduate
       t.string :subject,       null: false
-      t.string :gender,        null: false
-      t.integer :phone_number, null: false
+      t.integer :gender,        null: false
+      t.string :phone_number, null: false
       t.integer :capacity,     null: false
       t.boolean :is_deleted,   null: false, default: false
 

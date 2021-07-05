@@ -1,0 +1,21 @@
+<div>生徒名</div>
+<div>ふりがな</div>
+<div>学年</div>
+<div>学校名</div>
+<div>電話番号</div>
+<div>性別</div>
+<div>受講科目</div>
+
+<%= form_with model:@student, local:true do |f| %>
+
+<div><%= f.text_field :name %></div>
+<div><%= f.text_field :name_kana %></div>
+<div><%= f.select :grade, [["小1", "小学1年生"], ["小2", "小学2年生"],["小3", "小学3年生"],["小4", "小学4年生"],["小5", "小学5年生"],["小6", "小学6年生"]
+                           ["中1", "中学1年生"],["中2", "中学2年生"],["小3", "中学3年生"]
+                           ["高1", "高校1年生"],["高2", "高校2年生"]["高3", "高校3年生"],["卒生", "浪人生"]], include_blank: "学年選択" %></div>
+<div><%= f.text_field :school %></div>
+<div><%= f.text_field :phone_number %></div>
+<div><%= @stundent.gender %></div>
+<div><%= @student.subject %></div>
+
+<% end %>
