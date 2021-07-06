@@ -14,6 +14,7 @@ class StudentsController < ApplicationController
   
   def create
     @student = Student.new(student_params)
+    @subjects = params[:student_id][:subject_ids]
     @student.save
     redirect_to student_path(@student)
   end

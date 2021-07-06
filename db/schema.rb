@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_04_105728) do
+ActiveRecord::Schema.define(version: 2021_07_06_065248) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "subject_name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "lessons", force: :cascade do |t|
     t.integer "subject_id", null: false
@@ -59,7 +65,7 @@ ActiveRecord::Schema.define(version: 2021_07_04_105728) do
   create_table "subjects", force: :cascade do |t|
     t.integer "subject_student_id", null: false
     t.integer "subject_teacher_id", null: false
-    t.string "subject_name", null: false
+    t.integer "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
