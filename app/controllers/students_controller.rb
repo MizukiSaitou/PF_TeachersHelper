@@ -1,8 +1,9 @@
 class StudentsController < ApplicationController
-
+  
   def index
     @students = Student.order(:name).page(params[:page])
   end
+  
 
   def show
     @student = Student.find(params[:id])
@@ -24,5 +25,7 @@ class StudentsController < ApplicationController
   def student_params
     params.require(:student).permit(:name, :name_kana, :grade, :school, :phone_number, :gender)
   end
+  
+  def 
 
 end
