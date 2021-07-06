@@ -22,10 +22,11 @@
 <label><%=f.radio_button :gender, :"女性" %>女性</label>
 
 <h4>受講科目</h4>
-<%= f.collection_check_boxes(:subject_ids, @subjects, :id, :category_id) do |subject| %>
-    <%= subject.check_box %>
-    <%= subject.text %>
-    <%= f.submit"登録" %>
+<% Subject.all.each do |subject| %>
+<%= check_box_tag subject.id %>
+<%= label_tag subject.id, subject.subject_name %>
 <% end %>
+    <%= f.submit"登録" %>
+
 
 <% end %>
