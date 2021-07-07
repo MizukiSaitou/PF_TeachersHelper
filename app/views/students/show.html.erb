@@ -11,5 +11,11 @@
 <div><%= @student.grade %></div>
 <div><%= @student.school %></div>
 <div><%= @student.phone_number %></div>
-<div><%= @stundent.gender %></div>
-<div><%= @student.subject %></div>
+<div><%= @student.gender %></div>
+<div>
+    <% @subjects.map(&:subject_name).each do |subject| %>
+      <%= subject %>
+    <% end %>
+</div>
+
+<!--%= link_to"成績管理", record_path(@record) %>-->

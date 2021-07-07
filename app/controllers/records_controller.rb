@@ -1,7 +1,7 @@
 class RecordsController < ApplicationController
 
   def show
-    @student = Student.find(params[:id])
+    @record = Record.find(params[:id])
   end
 
   def edit
