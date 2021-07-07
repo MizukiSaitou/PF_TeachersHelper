@@ -1,21 +1,42 @@
-<div>生徒名</div>
-<div>ふりがな</div>
-<div>学年</div>
-<div>学校名</div>
-<div>電話番号</div>
-<div>性別</div>
-<div>受講科目</div>
+<div class="container">
+  <div class="row mt-5">
+    <div class="mx-auto">
+      <table class="table-bordered text-center">
+        <tr>
+          <th style="width:150px;">生徒名</th>
+          <td style="width:300px;"><%= @student.name %></td>
+        </tr>
+        <tr>
+          <th style="width:150px;">ふりがな</th>
+          <td style="width:300px;"><%= @student.name_kana %></td>
+        </tr>
+        <tr>
+          <th style="width:150px;">学年</th>
+          <td style="width:300px;"><%= @student.grade %></td>
+        </tr>
+        <tr>
+          <th style="width:150px;">学校名</th>
+          <td style="width:300px;"><%= @student.school %></td>
+        </tr>
+        <tr>
+          <th style="width:150px;">電話番号</th>
+          <td style="width:300px;"><%= @student.phone_number %></td>
+        </tr>
+        <tr>
+          <th style="width:150px;">性別</th>
+          <td style="width:300px;"><%= @student.gender %></td>
+        </tr>
+        <tr>
+          <th style="width:150px;">受講科目</th>
+          <td style="width:300px;"> 
+            <% @subjects.map(&:subject_name).each do |subject| %>
+              <%= subject %>
+            <% end %>
+          </td>
+        </tr>
+      </table>
 
-<div><%= @student.name %></div>
-<div><%= @student.name_kana %></div>
-<div><%= @student.grade %></div>
-<div><%= @student.school %></div>
-<div><%= @student.phone_number %></div>
-<div><%= @student.gender %></div>
-<div>
-    <% @subjects.map(&:subject_name).each do |subject| %>
-      <%= subject %>
-    <% end %>
+<!--%= link_to"成績管理", record_path(@student.record_id) %>-->
+  </div>
+ </div>
 </div>
-
-<!--%= link_to"成績管理", record_path(@record) %>-->

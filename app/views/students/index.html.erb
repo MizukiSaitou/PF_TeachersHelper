@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
-    <table  class="table table-bordered text-center">
-      <tr  class="table-secondary">
+    <table  class="table table-bordered border border-dark text-center">
+      <tr class="table-secondary">
         <th style="width: 30%">生徒名</th>
         <th style="width: 10%">性別</th>
         <th style="width: 10%">学年</th>
@@ -11,8 +11,12 @@
       
       <% @students.each do |student| %>
       
-      <tr class="table-active">
-        <td><%= student.name %></td>
+      <tr class="table-light">
+        <td>
+          <%= link_to student_path(student) do %>
+            <%= student.name %>
+          <% end %>
+        </td>
         <td><%= student.gender %></td>
         <td><%= student.grade %></td>
         <td><%= student.school %></td>

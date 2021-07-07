@@ -9,7 +9,7 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
     @belong_subject_ids = @student.subjects.ids
     @subjects = Subject.where(id: @belong_subject_ids)
-
+    # @student.record_id = @student.record.id
   end
 
   def new
@@ -17,7 +17,6 @@ class StudentsController < ApplicationController
   end
 
   def create
-
     @student = Student.new(student_params)
     @student.save
     redirect_to student_path(@student)
@@ -27,7 +26,7 @@ class StudentsController < ApplicationController
   private
 
   def student_params
-    params.require(:student).permit(:name, :name_kana, :grade, :school, :phone_number, :gender, :is_deleted, subject_students_attributes: [:subject_id])
+    params.require(:student).permit(:record_id, :name, :name_kana, :grade, :school, :phone_number, :gender, :is_deleted, subject_students_attributes: [:subject_id])
   end
 
 end
