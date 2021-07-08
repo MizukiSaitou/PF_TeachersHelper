@@ -6,7 +6,7 @@ class CreateRecords < ActiveRecord::Migration[5.2]
       t.integer :english_score
       t.integer :math_score
       t.integer :japanese_score
-      t.integer :siciense_score
+      t.integer :science_score
       t.integer :social_study_score
       t.integer :ew_english_score
       t.integer :cm_english_score
