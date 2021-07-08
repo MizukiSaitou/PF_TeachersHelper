@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
  resources :students,only:[:index, :show, :new, :create, :edit, :update]
  resources :teachers,only:[:index, :show, :new, :create, :edit, :update]
- resources :records,only:[:show, :edit, :update]
+ resources :records,only:[:index, :create, :edit, :update]
 end

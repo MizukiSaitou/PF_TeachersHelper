@@ -9,7 +9,7 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
     @belong_subject_ids = @student.subjects.ids
     @subjects = Subject.where(id: @belong_subject_ids)
-    # @student.record_id = @student.record.id
+    @record = @student.records
   end
 
   def new

@@ -1,7 +1,17 @@
 class RecordsController < ApplicationController
 
-  def show
-    @record = Record.find(params[:id])
+  def index
+    student_id = params[:student_id]
+    @student = Student.find(student_id)
+    @records = @student.records
+    @record = Record.new
+  end
+
+  def create
+    @record = Record.new(record_params)
+    @record.student_id = @record.student.id
+    @record.save
+    redirect_to record_path
   end
 
   def edit
@@ -15,5 +25,8 @@ class RecordsController < ApplicationController
   end
 
   private
-  params.require(:record).permit(:subject_name, :test_score, :academic_results)
+
+  def record_params
+    params.require(:record).permit(:student_id)
+  end
 end
