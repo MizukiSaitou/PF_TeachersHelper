@@ -22,14 +22,15 @@
 
   <div class="row mt-5">
     <h3>テスト点入力</h3>
+    <div class="table-responsive-sm">
     <table class="table-bordered">
       <tr>
-        <th style="width: 50%">テスト名</th>
-        <th style="width: 10%">英語</th>
-        <th style="width: 10%">数学</th>
-        <th style="width: 10%">国語</th>
-        <th style="width: 10%">理科</th>
-        <th style="width: 10%">社会</th>
+        <th>テスト名</th>
+        <th>英語</th>
+        <th>数学</th>
+        <th>国語</th>
+        <th>理科</th>
+        <th>社会</th>
       </tr>
     <%= form_with model:@record, local:true do |f| %>
     <tr>
@@ -43,6 +44,7 @@
     </tr>
     <% end %>
     </table>
+    </div>
   </div> 
   
   <div class="row mt-5">

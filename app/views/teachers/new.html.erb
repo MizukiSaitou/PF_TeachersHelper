@@ -2,7 +2,7 @@
  <div class="row mt-5">
   <div class="mx-auto">
 
-<%= form_with model:@student, local:true do |f| %>
+<%= form_with model:@teacher, local:true do |f| %>
 
 <table class="table-bordered">
 <tr>
@@ -18,15 +18,14 @@
 <tr>
 <th style="width:300px;">学年</th>
 <td style="width:510px;">
-<%= f.select :grade, [["小1", "小学1年生"], ["小2", "小学2年生"],["小3", "小学3年生"],["小4", "小学4年生"],["小5", "小学5年生"],["小6", "小学6年生"],
-                      ["中1", "中学1年生"],["中2", "中学2年生"],["中3", "中学3年生"],
-                      ["高1", "高校1年生"],["高2", "高校2年生"],["高3", "高校3年生"],["卒生", "浪人生"]], include_blank: "学年選択" %>
+<%= f.select :grade, [["1年生", "大学1年生"], ["2年生", "大学2年生"],["3年生", "大学3年生"],["4年生", "大学4年生"],
+                      ["院1", "大学院1年生"], ["院2", "大学院2年生"],["社会人", "社会人"]], include_blank: "学年選択" %>
 </td>
 </tr>
 
 <tr>
-<th style="width:300px;">学校名</td>
-<td style="width:520px;"><%= f.text_field :school %></td>
+<th style="width:300px;">大学/学部学科名</td>
+<td style="width:520px;"><%= f.text_field :university %><%= f.text_field :undergraduate %></td>
 </tr>
 
 <tr>
@@ -46,7 +45,7 @@
 <th style="width:300px;">受講科目</th>
 <td style="width:520px;">
 <% Subject.all.each do |subject| %>
-<%= check_box_tag 'student[subject_students_attributes][][subject_id]', subject.id %>
+<%= check_box_tag 'teacher[subject_teachers_attributes][][subject_id]', subject.id %>
 <%= label_tag subject.id, subject.subject_name %>
 <% end %>
 </td>
@@ -58,7 +57,7 @@
   <%= f.radio_button :is_deleted, false %>
   <%= f.label :is_deleted, "在籍", value:false %>
   <%= f.radio_button :is_deleted, true %>
-  <%= f.label :is_deleted, "退塾", value:true %>
+  <%= f.label :is_deleted, "退職", value:true %>
 </td>
 </tr>
 </table>
@@ -70,4 +69,3 @@
   </div>
  </div>
 </div>
-

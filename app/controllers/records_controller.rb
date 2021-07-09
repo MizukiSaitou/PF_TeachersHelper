@@ -11,7 +11,7 @@ class RecordsController < ApplicationController
     @record = Record.new(record_params)
     @record.student_id = @record.student.id
     @record.save
-    redirect_to record_path
+    redirect_to records_path
   end
 
   def edit
@@ -21,13 +21,13 @@ class RecordsController < ApplicationController
   def update
     @record = Record.find(params[:id])
     @record.update(record_params)
-    redirect_to record_path(@record)
+    redirect_to records_path(@record)
   end
 
   private
 
   def record_params
-    params.require(:record).permit(:student_id, :test_name, :english_score, :math_score, :japanese_score, :siciense_score, :social_study_score,
+    params.require(:record).permit(:student_id, :test_name, :english_score, :math_score, :japanese_score, :science_score, :social_study_score,
                                    :ew_english_score, :cm_english_score, :math_a_score, :math_b_score, :math_c_score, :modern_writing_score,
                                    :classic_score, :chemistory_score, :physics_score, :biology_score, :japanese_history_score, :world_history_score,
                                    :geograpy_score, :semester_name, :english_academic_result, :math_academic_result, :japanese_academic_result,

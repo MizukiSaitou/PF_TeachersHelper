@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="mx-auto">
+      <table class="table-bordered text-center">
+        <tr>
+          <th style="width:150px;">講師名</th>
+          <td style="width:300px;"><%= @teacher.name %></td>
+        </tr>
+        <tr>
+          <th style="width:150px;">ふりがな</th>
+          <td style="width:300px;"><%= @teacher.name_kana %></td>
+        </tr>
+        <tr>
+          <th style="width:150px;">学年</th>
+          <td style="width:300px;"><%= @teacher.grade %></td>
+        </tr>
+        <tr>
+          <th style="width:150px;">学校名</th>
+          <td style="width:300px;"><%= @teacher.university %><%= @teacher.undergraduate %></td>
+        </tr>
+        <tr>
+          <th style="width:150px;">電話番号</th>
+          <td style="width:300px;"><%= @teacher.phone_number %></td>
+        </tr>
+        <tr>
+          <th style="width:150px;">性別</th>
+          <td style="width:300px;"><%= @teacher.gender %></td>
+        </tr>
+        <tr>
+          <th style="width:150px;">指導科目</th>
+          <td style="width:300px;"> 
+            <% @subjects.map(&:subject_name).each do |subject| %>
+              <%= subject %>
+            <% end %>
+          </td>
+        </tr>
+      </table>
+  </div>
+ </div>
+</div>

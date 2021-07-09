@@ -105,11 +105,9 @@ ActiveRecord::Schema.define(version: 2021_07_04_105728) do
     t.string "name_kana", null: false
     t.string "grade", null: false
     t.string "university", null: false
-    t.string "undergraduate"
-    t.string "subject", null: false
-    t.integer "gender", null: false
+    t.string "undergraduate", null: false
+    t.integer "gender", default: 0, null: false
     t.string "phone_number", null: false
-    t.integer "capacity", null: false
     t.boolean "is_deleted", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

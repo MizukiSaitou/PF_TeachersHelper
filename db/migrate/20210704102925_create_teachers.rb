@@ -5,11 +5,9 @@ class CreateTeachers < ActiveRecord::Migration[5.2]
       t.string :name_kana,     null: false
       t.string :grade,         null: false
       t.string :university,    null: false
-      t.string :undergraduate
-      t.string :subject,       null: false
-      t.integer :gender,        null: false
-      t.string :phone_number, null: false
-      t.integer :capacity,     null: false
+      t.string :undergraduate, null: false
+      t.integer :gender, default: 0, null: false
+      t.string :phone_number,  null: false
       t.boolean :is_deleted,   null: false, default: false
 
       t.timestamps
