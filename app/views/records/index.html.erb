@@ -9,7 +9,7 @@
           <td style="width: 50%">生徒名</td>
         </tr>
       </thead>
-    
+
       <tbody class="table-bordered">
         <tr>
           <td><%= @student.school %></td>
@@ -19,67 +19,89 @@
       </tbody>
     </table>
   </div>
+  
 
   <div class="row mt-5">
     <h3>テスト点入力</h3>
-    <div class="table-responsive-sm">
-    <table class="table-bordered">
-      <tr>
-        <th>テスト名</th>
-        <th>英語</th>
-        <th>数学</th>
-        <th>国語</th>
-        <th>理科</th>
-        <th>社会</th>
-      </tr>
-    <%= form_with model:@record, local:true do |f| %>
-    <tr>
-      <td><%= f.text_field :test_name %></td>
-      <td><%= f.text_field :english_score %></td>
-      <td><%= f.text_field :math_score %></td>
-      <td><%= f.text_field :japanese_score %></td>
-      <td><%= f.text_field :science_score %></td>
-      <td><%= f.text_field :social_study_score %></td>
-      <%= f.submit"テスト結果を登録" %>
-    </tr>
-    <% end %>
-    </table>
+    <div>
+      <ul class="list-group list-group-horizontal">
+        <li class="list-group-item" style="width: 130px;">テスト名</li>
+        <li class="list-group-item" style="width: 80px;">英語</li>
+        <li class="list-group-item" style="width: 80px;">数学</li>
+        <li class="list-group-item" style="width: 80px;">国語</li>
+        <li class="list-group-item" style="width: 80px;">理科</li>
+        <li class="list-group-item" style="width: 80px;">社会</li>
+      </ul>
+      
+      <div class="row">
+      <%= form_with model:@record, local:true do |f| %>
+      <%= f.hidden_field :student_id, value: params[:student_id].to_i %>
+      <div class="form-row">
+        <div class="col-md-2">
+          <label>テスト名</label>
+          <div class="form-group">
+            <%= f.text_field :test_name, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="col-md-2">
+          
+          <div class="form-group"><%= f.text_field :english_score %></div>
+        </div>
+        <div class="col-md-2">
+          <div class="form-group"><%= f.text_field :math_score %></div>
+        </div>
+        <div class="col-md-2">
+          <div class="form-group"><%= f.text_field :japanese_score %></div>
+        </div>
+        <div class="col-md-2">
+          <div class="form-group"><%= f.text_field :science_score %></div>
+        </div>
+        <div class="col-md-2">
+           <div class="form-group"><%= f.text_field :social_study_score %></div>
+        </div>
+      </div>
+       <%= f.submit"テスト結果を登録" %>
+
+      <% end %>
+      </div>
     </div>
-  </div> 
-  
+  </div>
+
   <div class="row mt-5">
     <h3>内申点入力</h3>
-    <table class="table-bordered">
-      <tr>
-        <th>学期</th>
-        <th>英語</th>
-        <th>数学</th>
-        <th>国語</th>
-        <th>理科</th>
-        <th>社会</th>
-        <th>美術</th>
-        <th>音楽</th>
-        <th>体育</th>
-        <th>技/家</th>
-      </tr>
-    <%= form_with model:@record, local:true do |f| %>
-      <tr>
-        <td><%= f.text_field :semester_name %></td>
-        <td><%= f.text_field :english_academic_result %></td>
-        <td><%= f.text_field :math_academic_result %></td>
-        <td><%= f.text_field :japanese_academic_result %></td>
-        <td><%= f.text_field :science_academic_result %></td>
-        <td><%= f.text_field :sstudy_sacademic_result %></td>
-        <td><%= f.text_field :art_academic_result %></td>
-        <td><%= f.text_field :music_academic_result %></td>
-        <td><%= f.text_field :pe_academic_result %></td>
-        <td><%= f.text_field :te_academic_result %></td>
-      </tr>
-    <%= f.submit"内申点を登録" %>
-    <% end %>
-    </table>
+    <div>
+      <ul class="list-group list-group-horizontal">
+        <li class="list-group-item" style="width: 150px;">学期</li>
+        <li class="list-group-item" style="width: 150px;">英語</li>
+        <li class="list-group-item" style="width: 150px;">数学</li>
+        <li class="list-group-item" style="width: 150px;">国語</li>
+        <li class="list-group-item" style="width: 150px;">理科</li>
+        <li class="list-group-item" style="width: 150px;">社会</li>
+        <li class="list-group-item" style="width: 150px;">美術</li>
+        <li class="list-group-item" style="width: 150px;">音楽</li>
+        <li class="list-group-item" style="width: 150px;">体育</li>
+        <li class="list-group-item" style="width: 150px;">技/家</li>
+      </ul>
+      <div class="orm-inline">
+      <%= form_with model:@record, local:true do |f| %>
+      <ul class="list-group list-group-horizontal">
+        <li class="list-group-item" style="width: 150px;"><%= f.text_field :semester_name %></li>
+        <li class="list-group-item" style="width: 150px;"><%= f.text_field :english_academic_result %></li>
+        <li class="list-group-item" style="width: 150px;"><%= f.text_field :math_academic_result %></li>
+        <li class="list-group-item" style="width: 150px;"><%= f.text_field :japanese_academic_result %></li>
+        <li class="list-group-item" style="width: 150px;"><%= f.text_field :science_academic_result %></li>
+        <li class="list-group-item" style="width: 150px;"><%= f.text_field :sstudy_sacademic_result %></li>
+        <li class="list-group-item" style="width: 150px;"><%= f.text_field :art_academic_result %></li>
+        <li class="list-group-item" style="width: 150px;"><%= f.text_field :music_academic_result %></li>
+        <li class="list-group-item" style="width: 150px;"><%= f.text_field :pe_academic_result %></li>
+        <li class="list-group-item" style="width: 150px;"><%= f.text_field :te_academic_result %></li>
+      </ul>
+      <%= f.submit"内申点を登録" %>
+      <% end %>
+
+    </div>
   </div>
-  
+
 
 
 <h3>テスト結果</h3>
@@ -122,10 +144,10 @@
 <tr>
   <td><%= record.semester_name %></td>
   <td><%= record.english_academic_result %></td>
-  <td><%= rexord.math_academic_result %></td>
+  <td><%= record.math_academic_result %></td>
   <td><%= record.japanese_academic_result %></td>
   <td><%= record.science_academic_result %></td>
-  <td><%= record.sstudy_sacademic_result %></td>
+  <td><%= record.sstudy_academic_result %></td>
   <td><%= record.art_academic_result %></td>
   <td><%= record.music_academic_result %></td>
   <td><%= record.pe_academic_result %></td>

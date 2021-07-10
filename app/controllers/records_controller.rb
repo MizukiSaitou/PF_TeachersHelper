@@ -9,9 +9,12 @@ class RecordsController < ApplicationController
 
   def create
     @record = Record.new(record_params)
-    @record.student_id = @record.student.id
+    # student_idをrecordに引き渡す
+    student_id = params[:record][:student_id]
+    @student = Student.find(student_id)
+    @record.student_id = @student.id
     @record.save
-    redirect_to records_path
+    redirect_to records_path(student_id: @student.id)
   end
 
   def edit

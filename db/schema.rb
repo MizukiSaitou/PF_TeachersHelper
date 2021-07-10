@@ -88,7 +88,7 @@ ActiveRecord::Schema.define(version: 2021_07_04_105728) do
   end
 
   create_table "subject_teachers", force: :cascade do |t|
-    t.integer "teacehr_id", null: false
+    t.integer "teacher_id", null: false
     t.integer "subject_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

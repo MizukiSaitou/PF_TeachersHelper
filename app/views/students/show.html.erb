@@ -1,42 +1,57 @@
 <div class="container">
   <div class="row mt-5">
     <div class="mx-auto">
-      <table class="table-bordered text-center">
-        <tr>
-          <th style="width:150px;">生徒名</th>
-          <td style="width:300px;"><%= @student.name %></td>
-        </tr>
-        <tr>
-          <th style="width:150px;">ふりがな</th>
-          <td style="width:300px;"><%= @student.name_kana %></td>
-        </tr>
-        <tr>
-          <th style="width:150px;">学年</th>
-          <td style="width:300px;"><%= @student.grade %></td>
-        </tr>
-        <tr>
-          <th style="width:150px;">学校名</th>
-          <td style="width:300px;"><%= @student.school %></td>
-        </tr>
-        <tr>
-          <th style="width:150px;">電話番号</th>
-          <td style="width:300px;"><%= @student.phone_number %></td>
-        </tr>
-        <tr>
-          <th style="width:150px;">性別</th>
-          <td style="width:300px;"><%= @student.gender %></td>
-        </tr>
-        <tr>
-          <th style="width:150px;">受講科目</th>
-          <td style="width:300px;"> 
-            <% @subjects.map(&:subject_name).each do |subject| %>
-              <%= subject %>
-            <% end %>
-          </td>
-        </tr>
-      </table>
+      
+      <ul class="list-group list-group-horizontal">
+        <li class="list-group-item" style="width: 150px;">生徒名</li>
+        <li class="list-group-item" style="width: 300px;"><%= @student.name %></li>
+      </ul>
+      
+      <ul class="list-group list-group-horizontal">
+        <li class="list-group-item" style="width: 150px;">ふりがな</li>
+        <li class="list-group-item" style="width: 300px;"><%= @student.name_kana %></li>
+      </ul>
+      
+      <ul class="list-group list-group-horizontal">
+        <li class="list-group-item" style="width: 150px;">学年</li>
+        <li class="list-group-item" style="width: 300px;"><%= @student.grade %></li>
+      </ul>
+      
+      <ul class="list-group list-group-horizontal">
+        <li class="list-group-item" style="width: 150px;">学校名</li>
+        <li class="list-group-item" style="width: 300px;"><%= @student.school %></li>
+      </ul>
+      
+      <ul class="list-group list-group-horizontal">
+        <li class="list-group-item" style="width: 150px;">電話番号</li>
+        <li class="list-group-item" style="width: 300px;"><%= @student.phone_number %></li>
+      </ul>
+      
+      <ul class="list-group list-group-horizontal">
+        <li class="list-group-item" style="width: 150px;">性別</li>
+        <li class="list-group-item" style="width: 300px;"><%= @student.gender %></li>
+      </ul>
+      
+      <ul class="list-group list-group-horizontal">
+        <li class="list-group-item" style="width: 150px;">受講科目</li>
+        <li class="list-group-item" style="width: 300px;">
+          <% @subjects.map(&:subject_name).each do |subject| %>
+            <%= subject %>
+          <% end %>
+        </li>
+      </ul>
+      
+      <ul class="list-group list-group-horizontal">
+        <li class="list-group-item" style="width: 150px;">在籍</li>
+        <% if @student.is_deleted %>
+        <li class="list-group-item" style="width: 300px;">退塾</li>
+        <% else %>
+        <li class="list-group-item" style="width: 300px;">在籍中</li>
+        <% end %>
+       </ul>
 
-<%= link_to"成績管理", records_path(student_id: @student.id) %>
+      <%= link_to"成績管理", records_path(student_id: @student.id) %>
+      
+    </div>
   </div>
- </div>
 </div>
