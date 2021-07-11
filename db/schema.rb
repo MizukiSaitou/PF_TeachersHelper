@@ -129,10 +129,8 @@ ActiveRecord::Schema.define(version: 2021_07_11_051251) do
 
   create_table "workings", force: :cascade do |t|
     t.integer "teacher_id", null: false
-    t.integer "subject_id", null: false
-    t.date "day", null: false
-    t.time "time", null: false
-    t.integer "capacity", null: false
+    t.datetime "start_at", null: false
+    t.datetime "end_at", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

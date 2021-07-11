@@ -26,6 +26,6 @@ class TeachersController < ApplicationController
   private
 
   def teacher_params
-    params.require(:teacher).permit(:name, :name_kana, :grade, :university, :undergraduate, :phone_number, :gender, :is_deleted, subject_teachers_attributes: [:subject_id])
+    params.require(:teacher).permit(:name, :name_kana, :grade, :university, :undergraduate, :phone_number, :gender, :notices, :is_deleted, subject_teachers_attributes: [:subject_id])
   end
 end

@@ -1,10 +1,38 @@
 <div class="container">
+
+  <table>
+    <tr>
+       <th>講師名</th>
+       <td><%= @teacher.name %></td>
+    </tr>
+
+  </table>
+  
+  <%= form_with model:@working, local:true do |f| %>
+    <%= f.hidden_field :teacher_id, value: params[:teacher_id].to_i %>
+    <%= f.hidden_field :subject_id, value: params[:subject_id].to_i %>
+    
+    <%= f.label :start_at, "開始時間" %>
+    <%= f.datetime_select :start_at, minute_step: 10 %>
+    
+    <%= f.label :end_at, "終了時間" %>
+    <%= f.datetime_select :end_at, minute_step: 10 %>
+
+    <%= f.submit"登録" %>
+
+  <% end %>
+  
+  <% @workings.each do |working| %>
+  <%= working.start_at %>-<%= working.end_at %>
+ <% end %>
   
 
-<%= month_calendar do |date| %>
- <%= link_to new_working_path do %>
+
+<%= month_calendar workings: @workings do |date, workings| %>
   <%= date.day %>
- <% end %>
+
+ 
+
 <% end %>
 
 </div>

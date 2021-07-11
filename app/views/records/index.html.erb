@@ -20,11 +20,11 @@
       </tbody>
     </table>
   </div>
-
-  <% if @student.grade == '高1' || @student.grade == '高2' || @student.grade == '高3' %>
-    <%= render'records/h_index', record: @record, records: @records %>
+<p><%= @student.inspect %></p>
+  <% if @student.grade == '高1年生' || @student.grade == '高校2年生' || @student.grade == '高3年生' %>
+    <%= render'records/h_index', record: @record, student: @student, records: @records %>
   <% else %>
-    <%= render'records/jh_index', record: @record, records: @records %>
+    <%= render'records/jh_index', record: @record, student: @student, records: @records %>
   <% end %>
 
 </div>

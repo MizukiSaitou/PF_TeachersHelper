@@ -164,7 +164,7 @@
       <% if record.test_name.present? %>
       <tr>
         <td>
-          <%= link_to edit_record_path(record) do %>
+          <%= link_to edit_record_path(record, :student_id => student.id) do %>
             <%= record.test_name %>
           <% end %>
         </td>

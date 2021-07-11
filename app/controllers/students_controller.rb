@@ -27,7 +27,7 @@ class StudentsController < ApplicationController
   private
 
   def student_params
-    params.require(:student).permit(:record_id, :name, :name_kana, :grade, :school, :phone_number, :gender, :is_deleted, subject_students_attributes: [:subject_id])
+    params.require(:student).permit(:record_id, :name, :name_kana, :grade, :school, :phone_number, :gender, :notices, :is_deleted, subject_students_attributes: [:subject_id])
   end
 
 end
