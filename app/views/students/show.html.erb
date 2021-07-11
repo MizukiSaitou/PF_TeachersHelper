@@ -1,37 +1,37 @@
 <div class="container">
   <div class="row mt-5">
     <div class="mx-auto">
-      
+
       <ul class="list-group list-group-horizontal">
         <li class="list-group-item" style="width: 150px;">生徒名</li>
         <li class="list-group-item" style="width: 300px;"><%= @student.name %></li>
       </ul>
-      
+
       <ul class="list-group list-group-horizontal">
         <li class="list-group-item" style="width: 150px;">ふりがな</li>
         <li class="list-group-item" style="width: 300px;"><%= @student.name_kana %></li>
       </ul>
-      
+
       <ul class="list-group list-group-horizontal">
         <li class="list-group-item" style="width: 150px;">学年</li>
         <li class="list-group-item" style="width: 300px;"><%= @student.grade %></li>
       </ul>
-      
+
       <ul class="list-group list-group-horizontal">
         <li class="list-group-item" style="width: 150px;">学校名</li>
         <li class="list-group-item" style="width: 300px;"><%= @student.school %></li>
       </ul>
-      
+
       <ul class="list-group list-group-horizontal">
         <li class="list-group-item" style="width: 150px;">電話番号</li>
         <li class="list-group-item" style="width: 300px;"><%= @student.phone_number %></li>
       </ul>
-      
+
       <ul class="list-group list-group-horizontal">
         <li class="list-group-item" style="width: 150px;">性別</li>
         <li class="list-group-item" style="width: 300px;"><%= @student.gender %></li>
       </ul>
-      
+
       <ul class="list-group list-group-horizontal">
         <li class="list-group-item" style="width: 150px;">受講科目</li>
         <li class="list-group-item" style="width: 300px;">
@@ -40,7 +40,7 @@
           <% end %>
         </li>
       </ul>
-      
+
       <ul class="list-group list-group-horizontal">
         <li class="list-group-item" style="width: 150px;">在籍</li>
         <% if @student.is_deleted %>
@@ -51,7 +51,7 @@
        </ul>
 
       <%= link_to"成績管理", records_path(student_id: @student.id) %>
-      
+
     </div>
   </div>
 </div>

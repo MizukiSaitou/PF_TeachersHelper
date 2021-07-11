@@ -7,6 +7,7 @@ class CreateStudents < ActiveRecord::Migration[5.2]
       t.string :school,        null: false
       t.integer :gender, default: 0,  null: false
       t.string :phone_number,  null: false
+      t.text :notices
       t.boolean :is_deleted,   null: false, default: false
 
       t.timestamps

@@ -1,0 +1,235 @@
+<div class="row mt-5">
+    <h3>テスト点入力</h3>
+      <div class="row">
+        <%= form_with model:record, local:true do |f| %>
+        <%= f.hidden_field :student_id, value: params[:student_id].to_i %>
+          <div class="form-row">
+            <div class="form-group　col-md-2">
+              <%= f.label :テスト名 %>
+              <%= f.text_field :test_name, class: 'form-control' %>
+            </div>
+            <div class="form-group col-md-1">
+              <%= f.label :英表 %>
+              <%= f.text_field :ew_english_score, class: 'form-control' %>
+            </div>
+            <div class="form-group col-md-1">
+              <%= f.label :C英 %>
+              <%= f.text_field :cm_english_score, class: 'form-control' %>
+            </div>
+            <div class="form-group col-md-1">
+              <%= f.label :数ⅠA %>
+              <%= f.text_field :math_a_score, class: 'form-control' %>
+            </div>
+            <div class="form-group col-md-1">
+              <%= f.label :数ⅡB %>
+              <%= f.text_field :math_b_score, class: 'form-control' %>
+            </div>
+            <div class="form-group col-md-1">
+              <%= f.label :数Ⅲ %>
+              <%= f.text_field :math_c_score, class: 'form-control' %>
+            </div>
+            <div class="form-group col-md-1">
+              <%= f.label :現代文 %>
+              <%= f.text_field :modern_writing_score, class: 'form-control' %>
+            </div>
+            <div class="form-group col-md-1">
+              <%= f.label :古典 %>
+              <%= f.text_field :classic_score, class: 'form-control' %>
+            </div>
+            <div class="form-group col-md-1">
+              <%= f.label :化学 %>
+              <%= f.text_field :chemistory_score, class: 'form-control' %>
+            </div>
+            <div class="form-group col-md-1">
+              <%= f.label :物理 %>
+              <%= f.text_field :physics_score, class: 'form-control' %>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="offset col-md-2"></div>
+            <div class="form-group col-md-1">
+              <%= f.label :生物 %>
+              <%= f.text_field :biology_score, class: 'form-control' %>
+            </div>
+            <div class="form-group col-md-1">
+              <%= f.label :日本史 %>
+              <%= f.text_field :japanese_history_score, class: 'form-control' %>
+            </div>
+            <div class="form-group col-md-1">
+              <%= f.label :世界史 %>
+              <%= f.text_field :world_history_score, class: 'form-control' %>
+            </div>
+            <div class="form-group col-md-1">
+              <%= f.label :地理 %>
+              <%= f.text_field :geograpy_score, class: 'form-control' %>
+            </div>
+          </div>
+          <%= f.submit"テスト結果を登録" %>
+        <% end %>
+      </div>
+    </div>
+
+  <div class="row mt-5">
+    <h3>内申点入力</h3>
+      <div class="row">
+        <%= form_with model:record, local:true do |f| %>
+        <%= f.hidden_field :student_id, value: params[:student_id].to_i %>
+        <div class="form-row">
+          <div class="form-group col-md-2">
+            <%= f.label :学期名 %>
+            <%= f.text_field :semester_name, class: 'form-control' %>
+          </div>
+          <div class="form-group col-md-1">
+              <%= f.label :英表 %>
+              <%= f.text_field :ex_english_accademic_result, class: 'form-control' %>
+          </div>
+          <div class="form-group col-md-1">
+            <%= f.label :C英 %>
+            <%= f.text_field :cm_english_accademic_result, class: 'form-control' %>
+          </div>
+          <div class="form-group col-md-1">
+            <%= f.label :数ⅠA %>
+            <%= f.text_field :math_a_accademic_result, class: 'form-control' %>
+          </div>
+          <div class="form-group col-md-1">
+            <%= f.label :数ⅡB %>
+            <%= f.text_field :math_b_accademic_result, class: 'form-control' %>
+          </div>
+          <div class="form-group col-md-1">
+            <%= f.label :数Ⅲ %>
+            <%= f.text_field :math_c_accademic_result, class: 'form-control' %>
+          </div>
+          <div class="form-group col-md-1">
+            <%= f.label :現代文 %>
+            <%= f.text_field :modern_writing_accademic_result, class: 'form-control' %>
+          </div>
+          <div class="form-group col-md-1">
+            <%= f.label :古典 %>
+            <%= f.text_field :classic_accademic_result, class: 'form-control' %>
+          </div>
+          <div class="form-group col-md-1">
+            <%= f.label :化学 %>
+            <%= f.text_field :chemistory_accademic_result, class: 'form-control' %>
+          </div>
+          <div class="form-group col-md-1">
+            <%= f.label :物理 %>
+            <%= f.text_field :physics_accademic_result, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="offset col-md-2"></div>
+          <div class="form-group col-md-1">
+            <%= f.label :生物 %>
+            <%= f.text_field :biology_accademic_result, class: 'form-control' %>
+          </div>
+          <div class="form-group col-md-1">
+            <%= f.label :日本史 %>
+            <%= f.text_field :apanese_history_accademic_result, class: 'form-control' %>
+          </div>
+          <div class="form-group col-md-1">
+            <%= f.label :世界史 %>
+            <%= f.text_field :world_history_accademic_result, class: 'form-control' %>
+          </div>
+          <div class="form-group col-md-1">
+            <%= f.label :地理 %>
+            <%= f.text_field :geograpy_accademic_result, class: 'form-control' %>
+          </div>
+        </div>
+        　　<%= f.submit"内申点を登録" %>
+        <% end %>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <h3>テスト結果</h3>
+    <table class="table table-bordered border text-center">
+      <tr>
+        <th>テスト名</th>
+        <th>英表</th>
+        <th>C英</th>
+        <th>数ⅠA</th>
+        <th>数ⅡB</th>
+        <th>数Ⅲ</th>
+        <th>現代文</th>
+        <th>古典</th>
+        <th>化学</th>
+        <th>物理</th>
+        <th>生物</th>
+        <th>日本史</th>
+        <th>世界史</th>
+        <th>地理</th>
+      </tr>
+
+      <% records.each do |record| %>
+      <% if record.test_name.present? %>
+      <tr>
+        <td>
+          <%= link_to edit_record_path(record) do %>
+            <%= record.test_name %>
+          <% end %>
+        </td>
+        <td><%= record.ew_english_score %></td>
+        <td><%= record.cm_english_score %></td>
+        <td><%= record.math_a_score %></td>
+        <td><%= record.math_b_score %></td>
+        <td><%= record.math_c_score %></td>
+        <td><%= record.modern_writing_score %></td>
+        <td><%= record.classic_score %></td>
+        <td><%= record.chemistory_score %></td>
+        <td><%= record.physics_score %></td>
+        <td><%= record.biology_score %></td>
+        <td><%= record.japanese_history_score %></td>
+        <td><%= record.world_history_score %></td>
+        <td><%= record.geograpy_score %></td>
+      </tr>
+      <% end %>
+    <% end %>
+  </table>
+</div>
+
+<div class="row mt-5">
+  <h3>内申点</h3>
+  <table class="table table-bordered border text-center">
+      <tr>
+        <th>学期名</th>
+        <th>英表</th>
+        <th>C英</th>
+        <th>数ⅠA</th>
+        <th>数ⅡB</th>
+        <th>数Ⅲ</th>
+        <th>現代文</th>
+        <th>古典</th>
+        <th>化学</th>
+        <th>物理</th>
+        <th>生物</th>
+        <th>日本史</th>
+        <th>世界史</th>
+        <th>地理</th>
+      </tr>
+
+      <% records.each do |record| %>
+       <% if record.semester_name.present? %>
+      <tr>
+        <td>
+          <% link_to edit_record_path(record) do %>
+            <%= record.semester_name %>
+          <% end %>
+        </td>
+        <td><%= record.ex_english_accademic_result %></td>
+        <td><%= record.cm_english_accademic_result %></td>
+        <td><%= record.math_a_accademic_result %></td>
+        <td><%= record.math_b_accademic_result %></td>
+        <td><%= record.math_c_accademic_result %></td>
+        <td><%= record.modern_writing_accademic_result %></td>
+        <td><%= record.classic_accademic_result %></td>
+        <td><%= record.chemistory_accademic_result %></td>
+        <td><%= record.physics_accademic_result %></td>
+        <td><%= record.biology_accademic_result %></td>
+        <td><%= record.japanese_history_accademic_result %></td>
+        <td><%= record.world_history_accademic_result %></td>
+        <td><%= record.geograpy_accademic_result %></td>
+      </tr>
+      <% end %>
+      <% end %>
+    </table>
+  </div>

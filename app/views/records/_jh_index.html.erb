@@ -1,0 +1,156 @@
+<div class="row mt-5">
+    <h3>テスト点入力</h3>
+      <div class="row">
+        <%= form_with model:record, local:true do |f| %>
+        <%= f.hidden_field :student_id, value: params[:student_id].to_i %>
+          <div class="form-row">
+            <div class="form-group　col-md-2">
+              <%= f.label :テスト名 %>
+              <%= f.text_field :test_name, class: 'form-control' %>
+            </div>
+            <div class="form-group col-md-1">
+              <%= f.label :英語 %>
+              <%= f.text_field :english_score, class: 'form-control' %>
+            </div>
+            <div class="form-group col-md-1">
+              <%= f.label :数学 %>
+              <%= f.text_field :math_score, class: 'form-control' %>
+            </div>
+            <div class="form-group col-md-1">
+              <%= f.label :国語 %>
+              <%= f.text_field :japanese_score, class: 'form-control' %>
+            </div>
+            <div class="form-group col-md-1">
+              <%= f.label :理科 %>
+              <%= f.text_field :science_score, class: 'form-control' %>
+            </div>
+            <div class="form-group col-md-1">
+              <%= f.label :社会 %>
+              <%= f.text_field :social_study_score, class: 'form-control' %>
+            </div>
+          </div>
+          <%= f.submit"テスト結果を登録" %>
+        <% end %>
+      </div>
+    </div>
+
+  <div class="row mt-5">
+    <h3>内申点入力</h3>
+      <div class="row">
+        <%= form_with model:record, local:true do |f| %>
+        <%= f.hidden_field :student_id, value: params[:student_id].to_i %>
+        <div class="form-row">
+          <div class="form-group col-md-2">
+            <%= f.label :学期名 %>
+            <%= f.text_field :semester_name, class: 'form-control' %>
+          </div>
+          <div class="form-group col-md-1">
+            <%= f.label :英語 %>
+            <%= f.text_field :english_academic_result , class: 'form-control' %>
+          </div>
+          <div class="form-group col-md-1">
+            <%= f.label :数学 %>
+            <%= f.text_field :math_academic_result , class: 'form-control' %>
+          </div>
+          <div class="form-group col-md-1">
+            <%= f.label :国語 %>
+            <%= f.text_field :japanese_academic_result , class: 'form-control' %>
+          </div>
+          <div class="form-group col-md-1">
+            <%= f.label :理科 %>
+            <%= f.text_field :science_academic_result , class: 'form-control' %>
+          </div>
+          <div class="form-group col-md-1">
+            <%= f.label :社会 %>
+            <%= f.text_field :sstudy_academic_result , class: 'form-control' %>
+          </div>
+          <div class="form-group col-md-1">
+            <%= f.label :美術 %>
+            <%= f.text_field :art_academic_result , class: 'form-control' %>
+          </div>
+          <div class="form-group col-md-1">
+            <%= f.label :音楽 %>
+            <%= f.text_field :music_academic_result , class: 'form-control' %>
+          </div>
+          <div class="form-group col-md-1">
+            <%= f.label :体育 %>
+            <%= f.text_field :pe_academic_result, class: 'form-control' %>
+          </div>
+          <div class="form-group col-md-1">
+            <%= f.label :技・家 %>
+            <%= f.text_field :pe_academic_result, class: 'form-control' %>
+          </div>
+        </div>
+        　　<%= f.submit"内申点を登録" %>
+        <% end %>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <h3>テスト結果</h3>
+    <table class="table table-bordered border text-center">
+      <tr>
+        <th>テスト名</th>
+        <th>英語</th>
+        <th>数学</th>
+        <th>国語</th>
+        <th>理科</th>
+        <th>社会</th>
+      </tr>
+
+      <% records.each do |record| %>
+      <% if record.test_name.present? %>
+      <tr>
+        <td>
+          <%= link_to edit_record_path(record) do %>
+　          <%= record.test_name %></td>
+　        <% end %>
+        <td><%= record.english_score %></td>
+        <td><%= record.math_score %></td>
+        <td><%= record.japanese_score %></td>
+        <td><%= record.science_score %></td>
+        <td><%= record.social_study_score %></td>
+      </tr>
+      <% end %>
+    <% end %>
+  </table>
+</div>
+
+<div class="row mt-5">
+  <h3>内申点</h3>
+  <table class="table table-bordered border text-center">
+      <tr>
+        <th>学期</th>
+        <th>英語</th>
+        <th>数学</th>
+        <th>国語</th>
+        <th>理科</th>
+        <th>社会</th>
+        <th>美術</th>
+        <th>音楽</th>
+        <th>体育</th>
+        <th>技/家</th>
+      </tr>
+
+      <% records.each do |record| %>
+      <% if record.semester_name.present? %>
+      <tr>
+        <td>
+          <%= link_to edit_record_path(record) do %>
+            <%= record.semester_name %>
+          <% end %>
+        </td>
+        <td><%= record.english_academic_result %></td>
+        <td><%= record.math_academic_result %></td>
+        <td><%= record.japanese_academic_result %></td>
+        <td><%= record.science_academic_result %></td>
+        <td><%= record.sstudy_academic_result %></td>
+        <td><%= record.art_academic_result %></td>
+        <td><%= record.music_academic_result %></td>
+        <td><%= record.pe_academic_result %></td>
+        <td><%= record.te_academic_result %></td>
+      </tr>
+      <% end %>
+      <% end %>
+    </table>
+  </div>

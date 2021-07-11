@@ -13,6 +13,7 @@ class TeachersController < ApplicationController
 
   def new
     @teacher = Teacher.new
+    @subjects = Subject.all
   end
 
   def create

@@ -1,6 +1,5 @@
 <div class="container">
-
-  <div class="row mt-3">
+   <div class="row mt-3">
     <div class="offset-md-6"></div>
     <table class="col-md-6">
       <thead class="table-bordered">
@@ -21,10 +20,10 @@
     </table>
   </div>
 
-  <% if @student.grade == '高1' || @student.grade == '高2' || @student.grade == '高3' %>
-    <%= render'records/h_index', record: @record, records: @records %>
+  <% if @student.grade == '高1' || '高2' || '高3' %>
+    <%= render'records/h_edit', record: @record %>
   <% else %>
-    <%= render'records/jh_index', record: @record, records: @records %>
+    <%= render'records/jh_edit', record: @record %>
   <% end %>
 
 </div>

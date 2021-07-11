@@ -2,6 +2,9 @@ class RecordsController < ApplicationController
 
   def index
     student_id = params[:student_id]
+    if student_id.nil?
+      redirect_to new_student_patn
+    end
     @student = Student.find(student_id)
     @records = @student.records
     @record = Record.new
@@ -19,11 +22,16 @@ class RecordsController < ApplicationController
 
   def edit
     @record = Record.find(params[:id])
+    student_id = params[:student_id]
+    @student = Student.find(student_id)
   end
 
   def update
     @record = Record.find(params[:id])
     @record.update(record_params)
+    student_id = params[:record][:student_id]
+    @student = Student.find(student_id)
+    @record.student_id = @student.id
     redirect_to records_path(@record)
   end
 

@@ -10,12 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_04_105728) do
+ActiveRecord::Schema.define(version: 2021_07_11_051251) do
 
   create_table "lessons", force: :cascade do |t|
-    t.integer "subject_id", null: false
-    t.date "day", null: false
-    t.time "time", null: false
+    t.integer "student_id", null: false
+    t.integer "working_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -75,6 +74,7 @@ ActiveRecord::Schema.define(version: 2021_07_04_105728) do
     t.string "school", null: false
     t.integer "gender", default: 0, null: false
     t.string "phone_number", null: false
+    t.text "notices"
     t.boolean "is_deleted", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -108,6 +108,7 @@ ActiveRecord::Schema.define(version: 2021_07_04_105728) do
     t.string "undergraduate", null: false
     t.integer "gender", default: 0, null: false
     t.string "phone_number", null: false
+    t.text "notices"
     t.boolean "is_deleted", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -124,6 +125,16 @@ ActiveRecord::Schema.define(version: 2021_07_04_105728) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "workings", force: :cascade do |t|
+    t.integer "teacher_id", null: false
+    t.integer "subject_id", null: false
+    t.date "day", null: false
+    t.time "time", null: false
+    t.integer "capacity", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
