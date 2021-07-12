@@ -55,6 +55,7 @@
         <% end %>
       </ul>
 
+      <%= link_to"講師情報変更", edit_teacher_path(@teacher) %>
       <%= link_to"シフト確認", workings_path(teacher_id: @teacher.id) %>
 
     </div>

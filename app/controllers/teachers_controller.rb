@@ -18,8 +18,33 @@ class TeachersController < ApplicationController
 
   def create
     @teacher = Teacher.new(teacher_params)
-    @teacher.save
-    redirect_to teacher_path(@teacher)
+    if @teacher.save
+      redirect_to teacher_path(@teacher)
+    else
+      render :new
+    end
+  end
+
+  def edit
+    @teacher = Teacher.find(params[:id])
+    @subjects = Subject.all
+  end
+
+  def update
+    @teacher = Teacher.find(params[:id])
+    if @teacher.update(teacher_params)
+      # 1つ目の空データの削除
+    params[:teacher][:subject_ids].delete_at(0)
+      # 元ある科目を削除
+    @teacher.subject_teachers.destroy_all
+    # 再度作り直す
+    params[:teacher][:subject_ids].each do |id|
+      @teacher.subject_teachers.create(subject_id: id)
+    end
+      redirect_to teacher_path(@teacher)
+    else
+      render :edit
+    end
   end
 
 

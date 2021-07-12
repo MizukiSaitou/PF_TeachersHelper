@@ -28,13 +28,20 @@ class StudentsController < ApplicationController
 
   def edit
     @student = Student.find(params[:id])
-    @belong_subject_ids = @student.subjects.ids
     @subjects = Subject.all
   end
 
   def update
     @student = Student.find(params[:id])
-    if @student.update_attributes(student_params)
+    if @student.update(student_params)
+      # 1つ目の空データの削除
+    params[:student][:subject_ids].delete_at(0)
+      # 元ある科目を削除 
+    @student.subject_students.destroy_all
+    # 再度作り直す
+    params[:student][:subject_ids].each do |id|
+      @student.subject_students.create(subject_id: id)
+    end
       redirect_to student_path(@student)
     else
       render :edit
@@ -49,5 +56,7 @@ class StudentsController < ApplicationController
   def student_params
     params.require(:student).permit(:record_id, :name, :name_kana, :grade, :school, :phone_number, :gender, :notices, :is_deleted, subject_students_attributes: [:subject_id])
   end
+  
+ 
 
 end

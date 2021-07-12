@@ -57,10 +57,7 @@
        <ul class="list-group list-group-horizontal">
          <li class="list-group-item" style="width: 200px;"><%= f.label :指導科目 %></li>
          <li class="list-group-item" style="width: 830px;">
-           <% @subjects.each do |subject| %>
-           <%= check_box_tag 'teacher[subject_teachers_attributes][][subject_id]', subject.id %>
-           <%= label_tag subject.id, subject.subject_name %>
-           <% end %>
+            <%= f.collection_check_boxes :subject_ids, Subject.all, :id, :subject_name %>
          </li>
        </ul>
       </div>
