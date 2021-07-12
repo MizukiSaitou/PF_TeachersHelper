@@ -9,8 +9,8 @@
   </table>
 
   <%= form_with model:@working, local:true do |f| %>
-    <%= f.hidden_field :teacher_id, value: params[:teacher_id].to_i %>
-    <%= f.hidden_field :subject_id, value: params[:subject_id].to_i %>
+    <%= f.hidden_field :teacher_id, value: @teacher.id %>
+    <%= f.collection_select(:subject_id, @teacher.subjects, :id, :subject_name) %>
 
     <%= f.label :start_at, "開始時間" %>
     <%= f.datetime_select :start_at, minute_step: 10 %>
@@ -23,7 +23,10 @@
   <% end %>
 
   <% @workings.each do |working| %>
+  <%= link_to edit_working_path(working, :teacher_id => @teacher.id) do %>
   <%= working.start_at.strftime("%H:%M") %>-<%= working.end_at.strftime("%H:%M") %>
+  <%= working.subject.subject_name %>
+  <% end %>
  <% end %>
 
 

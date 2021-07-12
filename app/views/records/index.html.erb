@@ -1,7 +1,7 @@
 <div class="container">
-
   <div class="row mt-3">
-    <div class="offset-md-6"></div>
+    <h1>成績</h1>
+    <div class="offset-md-4"></div>
     <table class="col-md-6">
       <thead class="table-bordered">
         <tr>
@@ -20,7 +20,7 @@
       </tbody>
     </table>
   </div>
-<p><%= @student.inspect %></p>
+
   <% if @student.grade == '高1年生' || @student.grade == '高校2年生' || @student.grade == '高3年生' %>
     <%= render'records/h_index', record: @record, student: @student, records: @records %>
   <% else %>

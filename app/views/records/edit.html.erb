@@ -20,7 +20,7 @@
     </table>
   </div>
 
-  <% if @student.grade == '高1' || '高2' || '高3' %>
+  <% if @student.grade == '高1年生' || @student.grade == '高校2年生' || @student.grade == '高3年生' %>
     <%= render'records/h_edit', record: @record %>
   <% else %>
     <%= render'records/jh_edit', record: @record %>

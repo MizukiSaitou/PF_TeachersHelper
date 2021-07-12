@@ -19,9 +19,29 @@ class StudentsController < ApplicationController
 
   def create
     @student = Student.new(student_params)
-    @student.save
-    redirect_to student_path(@student)
+    if @student.save
+      redirect_to student_path(@student)
+    else
+      render :new
+    end
   end
+
+  def edit
+    @student = Student.find(params[:id])
+    @belong_subject_ids = @student.subjects.ids
+    @subjects = Subject.all
+  end
+
+  def update
+    @student = Student.find(params[:id])
+    if @student.update_attributes(student_params)
+      redirect_to student_path(@student)
+    else
+      render :edit
+    end
+  end
+  
+  
 
 
   private

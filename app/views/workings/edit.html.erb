@@ -1,0 +1,12 @@
+ <%= form_with model:@working, local:true do |f| %>
+    <%= f.collection_select(:subject_id, @teacher.subjects, :id, :subject_name) %>
+
+    <%= f.label :start_at, "開始時間" %>
+    <%= f.datetime_select :start_at, minute_step: 10 %>
+
+    <%= f.label :end_at, "終了時間" %>
+    <%= f.datetime_select :end_at, minute_step: 10 %>
+
+    <%= f.submit"登録" %>
+
+  <% end %>

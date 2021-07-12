@@ -1,5 +1,6 @@
 <div class="container">
   <div class="row mt-5">
+    <h1>生徒情報</h1>
     <div class="mx-auto">
 
       <ul class="list-group list-group-horizontal">
@@ -40,7 +41,7 @@
           <% end %>
         </li>
       </ul>
-      
+
       <ul class="list-group list-group-horizontal">
         <li class="list-group-item" style="width: 150px;">特記事項</li>
         <li class="list-group-item" style="width: 300px;"><%= @student.notices %></li>
@@ -55,6 +56,7 @@
         <% end %>
        </ul>
 
+      <%= link_to"生徒情報変更", edit_student_path(@student) %>
       <%= link_to"成績管理", records_path(student_id: @student.id) %>
 
     </div>
