@@ -1,5 +1,7 @@
 class TeachersController < ApplicationController
 
+  before_action :authenticate_user!, except: [:top]
+
   def index
     @teachers = Teacher.order(:name).page(params[:page])
   end

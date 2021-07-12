@@ -211,7 +211,7 @@
        <% if record.semester_name.present? %>
       <tr>
         <td>
-          <% link_to edit_record_path(record) do %>
+          <% link_to edit_record_path(record, :student_id => student.id) do %>
             <%= record.semester_name %>
           <% end %>
         </td>

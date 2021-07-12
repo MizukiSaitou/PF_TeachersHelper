@@ -1,64 +1,72 @@
-<div class="container">
-  <div class="row mt-5">
+<div class="student-box" >
+  <div class="container">
     <h1>生徒情報</h1>
-    <div class="mx-auto">
+      <div class="row mt-5">
+        <div class="mx-auto">
 
-      <ul class="list-group list-group-horizontal">
-        <li class="list-group-item" style="width: 150px;">生徒名</li>
-        <li class="list-group-item" style="width: 300px;"><%= @student.name %></li>
-      </ul>
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item" style="width: 150px;">生徒名</li>
+            <li class="list-group-item" style="width: 300px;"><%= @student.name %></li>
+          </ul>
 
-      <ul class="list-group list-group-horizontal">
-        <li class="list-group-item" style="width: 150px;">ふりがな</li>
-        <li class="list-group-item" style="width: 300px;"><%= @student.name_kana %></li>
-      </ul>
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item" style="width: 150px;">ふりがな</li>
+            <li class="list-group-item" style="width: 300px;"><%= @student.name_kana %></li>
+          </ul>
 
-      <ul class="list-group list-group-horizontal">
-        <li class="list-group-item" style="width: 150px;">学年</li>
-        <li class="list-group-item" style="width: 300px;"><%= @student.grade %></li>
-      </ul>
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item" style="width: 150px;">学年</li>
+            <li class="list-group-item" style="width: 300px;"><%= @student.grade %></li>
+          </ul>
 
-      <ul class="list-group list-group-horizontal">
-        <li class="list-group-item" style="width: 150px;">学校名</li>
-        <li class="list-group-item" style="width: 300px;"><%= @student.school %></li>
-      </ul>
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item" style="width: 150px;">学校名</li>
+            <li class="list-group-item" style="width: 300px;"><%= @student.school %></li>
+          </ul>
 
-      <ul class="list-group list-group-horizontal">
-        <li class="list-group-item" style="width: 150px;">電話番号</li>
-        <li class="list-group-item" style="width: 300px;"><%= @student.phone_number %></li>
-      </ul>
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item" style="width: 150px;">電話番号</li>
+            <li class="list-group-item" style="width: 300px;"><%= @student.phone_number %></li>
+          </ul>
 
-      <ul class="list-group list-group-horizontal">
-        <li class="list-group-item" style="width: 150px;">性別</li>
-        <li class="list-group-item" style="width: 300px;"><%= @student.gender %></li>
-      </ul>
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item" style="width: 150px;">性別</li>
+            <li class="list-group-item" style="width: 300px;"><%= @student.gender %></li>
+          </ul>
 
-      <ul class="list-group list-group-horizontal">
-        <li class="list-group-item" style="width: 150px;">受講科目</li>
-        <li class="list-group-item" style="width: 300px;">
-          <% @subjects.map(&:subject_name).each do |subject| %>
-            <%= subject %>
-          <% end %>
-        </li>
-      </ul>
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item" style="width: 150px;">受講科目</li>
+            <li class="list-group-item" style="width: 300px;">
+              <% @subjects.map(&:subject_name).each do |subject| %>
+                <%= subject %>
+              <% end %>
+            </li>
+          </ul>
 
-      <ul class="list-group list-group-horizontal">
-        <li class="list-group-item" style="width: 150px;">特記事項</li>
-        <li class="list-group-item" style="width: 300px;"><%= @student.notices %></li>
-      </ul>
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item" style="width: 150px;">特記事項</li>
+            <li class="list-group-item" style="width: 300px;"><%= @student.notices %></li>
+          </ul>
 
-      <ul class="list-group list-group-horizontal">
-        <li class="list-group-item" style="width: 150px;">在籍</li>
-        <% if @student.is_deleted %>
-        <li class="list-group-item" style="width: 300px;">退塾</li>
-        <% else %>
-        <li class="list-group-item" style="width: 300px;">在籍中</li>
-        <% end %>
-       </ul>
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item" style="width: 150px;">在籍</li>
+            <% if @student.is_deleted %>
+            <li class="list-group-item" style="width: 300px;">退塾</li>
+            <% else %>
+            <li class="list-group-item" style="width: 300px;">在籍中</li>
+            <% end %>
+           </ul>
 
-      <%= link_to"生徒情報変更", edit_student_path(@student) %>
-      <%= link_to"成績管理", records_path(student_id: @student.id) %>
 
-    </div>
+          <%= link_to"生徒情報変更", edit_student_path(@student) %>
+
+         <% if @student.grade == '中学1年生' || @student.grade == '中学2年生' || @student.grade == '中学年生' || @student.grade == '高校1年生' || @student.grade == '高校2年生' || @student.grade == '高3年生' %>
+           <%= link_to"成績管理", records_path(student_id: @student.id) %>
+         <% end %>
+
+         <%= link_to "戻る", students_path %>
+
+        </div>
+      </div>
   </div>
 </div>

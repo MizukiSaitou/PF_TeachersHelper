@@ -1,31 +1,33 @@
 <div class="container">
-  <div class="row mt-5">
-    <table  class="table table-bordered border border-dark text-center">
-      <tr class="table-secondary">
-        <th style="width: 30%">講師名</th>
-        <th style="width: 10%">性別</th>
-        <th style="width: 30%">学科</th>
-        <th style="width: 30%">電話番号</th>
-      </tr>
+  <h1>講師一覧</h1>
+    <div class="row mt-5">
+    
+      <table  class="table table-bordered border border-dark text-center">
+        <tr class="table-secondary">
+          <th style="width: 30%">講師名</th>
+          <th style="width: 10%">性別</th>
+          <th style="width: 30%">学科</th>
+          <th style="width: 30%">電話番号</th>
+        </tr>
 
-      <% @teachers.each do |teacher| %>
+        <% @teachers.each do |teacher| %>
 
-      <tr class="table-light">
-        <td>
-          <%= link_to teacher_path(teacher) do %>
-            <%= teacher.name %>
-          <% end %>
-        </td>
-        <td><%= teacher.gender %></td>
-        <td><%= teacher.undergraduate %></td>
-        <td><%= teacher.phone_number %></td>
-      </tr>
+        <tr class="table-light">
+          <td>
+            <%= link_to teacher_path(teacher) do %>
+              <%= teacher.name %>
+            <% end %>
+          </td>
+          <td><%= teacher.gender %></td>
+          <td><%= teacher.undergraduate %></td>
+          <td><%= teacher.phone_number %></td>
+        </tr>
 
-      <% end %>
-    </table>
+        <% end %>
+      </table>
 
 
-    <%= paginate @teachers %>
+      <%= paginate @teachers %>
 
- </div>
+     </div>
 </div>

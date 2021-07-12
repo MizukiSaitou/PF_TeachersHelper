@@ -1,33 +1,35 @@
-<div class="container">
-  <div class="row">
-    <table class="table table-bordered border border-dark text-center">
-      <tr class="table-secondary">
-        <th style="width: 30%">生徒名</th>
-        <th style="width: 10%">性別</th>
-        <th style="width: 10%">学年</th>
-        <th style="width: 20%">学校名</th>
-        <th style="width: 30%">電話番号</th>
-      </tr>
+<div class="student-box" >
+  <div class="container">
+    <div class="row">
+      <h1>生徒一覧</h1>
+        <table class="table table-bordered border border-dark text-center">
+          <tr class="table-secondary">
+            <th style="width: 30%">生徒名</th>
+            <th style="width: 10%">性別</th>
+            <th style="width: 10%">学年</th>
+            <th style="width: 20%">学校名</th>
+            <th style="width: 30%">電話番号</th>
+          </tr>
 
-      <% @students.each do |student| %>
+          <% @students.each do |student| %>
 
-      <tr class="table-light">
-        <td>
-          <%= link_to student_path(student) do %>
-            <%= student.name %>
+          <tr class="table-light">
+            <td>
+              <%= link_to student_path(student) do %>
+                <%= student.name %>
+              <% end %>
+            </td>
+            <td><%= student.gender %></td>
+            <td><%= student.grade %></td>
+            <td><%= student.school %></td>
+            <td><%= student.phone_number %></td>
+          </tr>
+
           <% end %>
-        </td>
-        <td><%= student.gender %></td>
-        <td><%= student.grade %></td>
-        <td><%= student.school %></td>
-        <td><%= student.phone_number %></td>
-      </tr>
+        </table>
 
-      <% end %>
-    </table>
+      <%= paginate @students %>
 
-
-    <%= paginate @students %>
-
- </div>
+   </div>
+  </div>
 </div>

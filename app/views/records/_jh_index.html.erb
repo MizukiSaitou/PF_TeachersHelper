@@ -78,7 +78,7 @@
           </div>
           <div class="form-group col-md-1">
             <%= f.label :技・家 %>
-            <%= f.text_field :pe_academic_result, class: 'form-control' %>
+            <%= f.text_field :te_academic_result, class: 'form-control' %>
           </div>
         </div>
         　　<%= f.submit"内申点を登録" %>
@@ -102,7 +102,7 @@
       <% if record.test_name.present? %>
       <tr>
         <td>
-          <%= link_to edit_record_path(record) do %>
+          <%= link_to edit_record_path(record, :student_id => student.id) do %>
 　          <%= record.test_name %></td>
 　        <% end %>
         <td><%= record.english_score %></td>
@@ -136,7 +136,7 @@
       <% if record.semester_name.present? %>
       <tr>
         <td>
-          <%= link_to edit_record_path(record) do %>
+          <%= link_to edit_record_path(record, :student_id => student.id) do %>
             <%= record.semester_name %>
           <% end %>
         </td>

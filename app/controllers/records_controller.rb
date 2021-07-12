@@ -1,11 +1,12 @@
 class RecordsController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     student_id = params[:student_id]
-    if student_id.nil?
-      redirect_to new_student_patn
-    end
     @student = Student.find(student_id)
+    if student_id.nil?
+     redirect_to new_student_patn(@student)
+    end
     @records = @student.records
     @record = Record.new
   end
@@ -16,8 +17,11 @@ class RecordsController < ApplicationController
     student_id = params[:record][:student_id]
     @student = Student.find(student_id)
     @record.student_id = @student.id
-    @record.save
-    redirect_to records_path(student_id: @student.id)
+    if @record.save
+      redirect_to records_path(student_id: @student.id)
+    else
+      render :index
+    end
   end
 
   def edit
@@ -28,11 +32,14 @@ class RecordsController < ApplicationController
 
   def update
     @record = Record.find(params[:id])
-    @record.update(record_params)
     student_id = params[:record][:student_id]
     @student = Student.find(student_id)
     @record.student_id = @student.id
-    redirect_to records_path(@record)
+    if @record.update(record_params)
+      redirect_to records_path(student_id: @student.id)
+    else
+      render :edit
+    end
   end
 
   private
