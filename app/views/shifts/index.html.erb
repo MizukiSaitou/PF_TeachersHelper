@@ -1,0 +1,26 @@
+<div class="container">
+
+  <table>
+    <tr>
+       <th>講師名</th>
+       <td><%= @teacher.name %></td>
+    </tr>
+
+  </table>
+
+<%= form_with model:@shift, local:true do |f| %>
+<%= f.label :start_at, "開始時間" %>
+<%= f.datetime_field :start_at, minute_step: 10 %>
+<%= f.label :end_at, "終了時間" %>
+<%= f.datetime_field :end_at, minute_step: 10 %>
+
+<%= f.submit"登録" %>
+<% end %>
+
+
+<% @shifts.each do |shift| %>
+ <%= link_to edit_shift_path(shift, :teacher_id => @teacher.id) do %>
+ <%= shift.start_at.strftime("%Y年 %m月 %d日 %H:%M") %>-<%= shift.end_at.strftime("%H:%M") %>
+  <% end %>
+<% end %>
+</div>

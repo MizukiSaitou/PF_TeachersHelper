@@ -1,4 +1,7 @@
 class Student < ApplicationRecord
+   
+   has_many :teachers, through: :lessons
+   has_many :lessons, dependent: :destroy
    has_many :records, dependent: :destroy
    has_many :subject_students, dependent: :destroy
    has_many :subjects, through: :subject_students

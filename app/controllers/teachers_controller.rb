@@ -48,6 +48,9 @@ class TeachersController < ApplicationController
       render :edit
     end
   end
+  
+  def search
+  end
 
 
   private

@@ -6,14 +6,50 @@ ul{
   list-style: none;
 }
 
+.menu-text{
+  margin-top: 30px;
+  margin-left: 100px;
+}
+
 .student-menu{
-  margin: 0 0 0 150px ;
+  margin: 50px 0 60px 180px;
 }
 
 .teacher-menu{
- margin: 0 150px 0 auto;
-}
+  margin: 50px 0 60px 180px;
+ }
 
 .lesson-menu{
-  margin: 0 auto;
+  margin: 50px 0 0 180px;
+ }
+
+.top{
+  background-color: #DCDCDC;
+}
+
+.container{
+  background-color: white;
+}
+
+header,footer{
+  background-color: #191970;
+  color: white;
+}
+
+ .message{
+   text-align: center;
+   padding-bottom: 270px;
+ }
+
+ .menu {
+   background-repeat: no-repeat;
+   background-size: 810px;
+   background-position: bottom 0px right 0px;
+   height: 90vh;//topの画像フルスクリーン
+   background-image: image-url('menu.jpg');
+ }
+
+.link{
+  text-decoration: none;
+  color: white ;
 }

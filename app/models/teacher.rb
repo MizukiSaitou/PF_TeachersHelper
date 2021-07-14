@@ -1,6 +1,8 @@
 class Teacher < ApplicationRecord
 
-  has_many :workings, dependent: :destroy
+  has_many :students, through: :lessons
+  has_many :lessons, dependent: :destroy
+  has_many :shifts, dependent: :destroy
   has_many :subject_teachers, dependent: :destroy
   has_many :subjects, through: :subject_teachers
   accepts_nested_attributes_for :subject_teachers, allow_destroy: true
