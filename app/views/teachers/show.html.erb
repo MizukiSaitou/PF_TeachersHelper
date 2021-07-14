@@ -1,66 +1,67 @@
-<div class="container">
+<div class="teacher-box">
   <h1>講師情報</h1>
-    <div class="row mt-5">
-      <div class="mx-auto">
+    <div class="container">
+      <div class="row mt-5">
+        <div class="mx-auto">
 
-        <ul class="list-group list-group-horizontal">
-          <li class="list-group-item" style="width: 150px;">講師名</li>
-          <li class="list-group-item" style="width: 300px;"><%= @teacher.name %></li>
-        </ul>
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item" style="width: 150px;">講師名</li>
+            <li class="list-group-item" style="width: 300px;"><%= @teacher.name %></li>
+          </ul>
 
-        <ul class="list-group list-group-horizontal">
-          <li class="list-group-item" style="width: 150px;">ふりがな</li>
-          <li class="list-group-item" style="width: 300px;"><%= @teacher.name_kana %></li>
-        </ul>
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item" style="width: 150px;">ふりがな</li>
+            <li class="list-group-item" style="width: 300px;"><%= @teacher.name_kana %></li>
+          </ul>
 
-        <ul class="list-group list-group-horizontal">
-          <li class="list-group-item" style="width: 150px;">学年</li>
-          <li class="list-group-item" style="width: 300px;"><%= @teacher.grade %></li>
-        </ul>
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item" style="width: 150px;">学年</li>
+            <li class="list-group-item" style="width: 300px;"><%= @teacher.grade %></li>
+          </ul>
 
-        <ul class="list-group list-group-horizontal">
-          <li class="list-group-item" style="width: 150px;">大学名学部学科</li>
-          <li class="list-group-item" style="width: 300px;"><%= @teacher.university %><%= @teacher.undergraduate %></li>
-        </ul>
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item" style="width: 150px;">大学名学部学科</li>
+            <li class="list-group-item" style="width: 300px;"><%= @teacher.university %><%= @teacher.undergraduate %></li>
+          </ul>
 
-        <ul class="list-group list-group-horizontal">
-          <li class="list-group-item" style="width: 150px;">電話番号</li>
-          <li class="list-group-item" style="width: 300px;"><%= @teacher.phone_number %></li>
-        </ul>
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item" style="width: 150px;">電話番号</li>
+            <li class="list-group-item" style="width: 300px;"><%= @teacher.phone_number %></li>
+          </ul>
 
-        <ul class="list-group list-group-horizontal">
-          <li class="list-group-item" style="width: 150px;">性別</li>
-          <li class="list-group-item" style="width: 300px;"><%= @teacher.gender %></li>
-        </ul>
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item" style="width: 150px;">性別</li>
+            <li class="list-group-item" style="width: 300px;"><%= @teacher.gender %></li>
+          </ul>
 
-        <ul class="list-group list-group-horizontal">
-          <li class="list-group-item" style="width: 150px;">特記事項</li>
-          <li class="list-group-item" style="width: 300px;"><%= @teacher.notices %></li>
-        </ul>
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item" style="width: 150px;">特記事項</li>
+            <li class="list-group-item" style="width: 300px;"><%= @teacher.notices %></li>
+          </ul>
 
-        <ul class="list-group list-group-horizontal">
-          <li class="list-group-item" style="width: 150px;">受講科目</li>
-          <li class="list-group-item" style="width: 300px;">
-            <% @subjects.map(&:subject_name).each do |subject| %>
-              <%= subject %>
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item" style="width: 150px;">受講科目</li>
+            <li class="list-group-item" style="width: 300px;">
+              <% @subjects.map(&:subject_name).each do |subject| %>
+                <%= subject %>
+              <% end %>
+            </li>
+          </ul>
+
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item" style="width: 150px;">在籍</li>
+            <% if @teacher.is_deleted %>
+            <li class="list-group-item" style="width: 300px;">退職</li>
+            <% else %>
+            <li class="list-group-item" style="width: 300px;">在籍中</li>
             <% end %>
-          </li>
-        </ul>
+          </ul>
 
-        <ul class="list-group list-group-horizontal">
-          <li class="list-group-item" style="width: 150px;">在籍</li>
-          <% if @teacher.is_deleted %>
-          <li class="list-group-item" style="width: 300px;">退職</li>
-          <% else %>
-          <li class="list-group-item" style="width: 300px;">在籍中</li>
-          <% end %>
-        </ul>
+          <%= link_to"講師情報変更", edit_teacher_path(@teacher) %>
+          <%= link_to"シフト確認", shifts_path(teacher_id: @teacher.id) %>
+          <%= link_to "戻る", teachers_path %>
 
-        <%= link_to"講師情報変更", edit_teacher_path(@teacher) %>
-        <%= link_to"シフト確認", shifts_path(teacher_id: @teacher.id) %>
-        <%= link_to "戻る", teachers_path %>
-
+        </div>
       </div>
     </div>
 </div>
-
