@@ -1,45 +1,62 @@
- <div class="teacher-box">
+<div class="teacher-box">
+  <div class="container">
   <h1>講師一覧</h1>
-  
-  <%= form_with url:teachers_path, method: :get, local: true do |f| %>
-  　<%= f.label :search, "講師名" %>
-    <%= f.text_field :search %> 
-    <%= f.submit"検索" ,:name => nil %> 
-  <% end %> 
-  
-  <!-- formatをcsvとして指定してcontrollerのrespond_toの処理を実行する -->
-  <%= link_to "csvで出力する",teachers_path(format: :csv) %>
-  
-    <div class="container">
-      <div class="row mt-5">
 
-        <table  class="table table-bordered border border-dark text-center">
-          <tr class="table-secondary">
-            <th style="width: 30%">講師名</th>
-            <th style="width: 10%">性別</th>
-            <th style="width: 30%">学科</th>
-            <th style="width: 30%">電話番号</th>
-          </tr>
+    <div class="row">
+      <div class="form-group">
+        <%= form_with url:teachers_path, method: :get, local: true do |f| %>
+        　<%= f.label :search, "講師名" %>
+          <%= f.text_field :search %>
+          <%= f.submit"検索" ,:name => nil %>
+        <% end %>
+      </div>
 
-          <% @teachers.each do |teacher| %>
+      <div class="new-teacher ml-3">
+        <%= link_to"講師新規追加", new_teacher_path, class:"btn btn-dark btn-sm" %>
+      </div>
 
-          <tr class="table-light">
-            <td>
-              <%= link_to teacher_path(teacher) do %>
-                <%= teacher.name %>
-              <% end %>
-            </td>
-            <td><%= teacher.gender %></td>
-            <td><%= teacher.undergraduate %></td>
-            <td><%= teacher.phone_number %></td>
-          </tr>
-
-          <% end %>
-        </table>
-
-
-        <%= paginate @teachers %>
-
-       </div>
+      <div class="csv ml-3">
+        <!-- formatをcsvとして指定してcontrollerのrespond_toの処理を実行する -->
+        <%= link_to "csvで出力する",teachers_path(format: :csv), class:"btn btn-dark btn-sm" %>
+      </div>
     </div>
+
+
+    <div class="row">
+      <table  class="table table-bordered border border-dark text-center">
+        <tr class="table-secondary">
+          <th style="width: 30%">講師名</th>
+          <th style="width: 10%">性別</th>
+          <th style="width: 30%">学部学科</th>
+          <th style="width: 20%">電話番号</th>
+          <th style="width: 10%">在籍</th>
+        </tr>
+
+        <% @teachers.each do |teacher| %>
+
+        <tr class="table-light">
+          <td>
+            <%= link_to teacher_path(teacher) do %>
+              <%= teacher.name %>
+            <% end %>
+          </td>
+          <td><%= teacher.gender %></td>
+          <td><%= teacher.university %><%= teacher.undergraduate %></td>
+          <td><%= teacher.phone_number %></td>
+          <td>
+            <% if teacher.is_deleted %>
+            退職
+            <% else %>
+            在籍中
+            <% end %>
+        　</td>
+        </tr>
+
+        <% end %>
+      </table>
+
+      <%= paginate @teachers %>
+
+    </div>
+  </div>
 </div>

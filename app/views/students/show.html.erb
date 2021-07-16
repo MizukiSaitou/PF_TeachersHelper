@@ -2,6 +2,16 @@
   <div class="container">
     <h1>生徒情報</h1>
       <div class="row mt-5">
+        <div class="col-md-3">
+          <div class="new">
+            <%= link_to"授業を組む", new_lesson_path(student_id: @student.id) %>
+          </div>
+          <div class="making-record">
+            <% if @student.grade == '中学1年生' || @student.grade == '中学2年生' || @student.grade == '中学年生' || @student.grade == '高校1年生' || @student.grade == '高校2年生' || @student.grade == '高3年生' %>
+              <%= link_to"成績管理", records_path(student_id: @student.id) %>
+            <% end %>
+          </div>
+        </div>
         <div class="mx-auto">
 
           <ul class="list-group list-group-horizontal">
@@ -57,18 +67,16 @@
             <% end %>
            </ul>
 
+          <div class="edit mt-3">
+            <%= link_to"生徒情報変更", edit_student_path(@student) %>
+          </div>
 
-          <%= link_to"生徒情報変更", edit_student_path(@student) %>
 
-         <% if @student.grade == '中学1年生' || @student.grade == '中学2年生' || @student.grade == '中学年生' || @student.grade == '高校1年生' || @student.grade == '高校2年生' || @student.grade == '高3年生' %>
-           <%= link_to"成績管理", records_path(student_id: @student.id) %>
-         <% end %>
-
-         <%= link_to "戻る", students_path %>
-
-         <%= link_to"授業を組む", new_lesson_path(student_id: @student.id) %>
+          <div class="back mt-3">
+             <%= link_to "生徒一覧に戻る", students_path %>
+          </div>
 
         </div>
-      </div>
+    </div>
   </div>
 </div>

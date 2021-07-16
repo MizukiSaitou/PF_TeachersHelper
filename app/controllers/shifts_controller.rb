@@ -12,7 +12,7 @@ class ShiftsController < ApplicationController
   def create
     @shift = Shift.new(shift_params)
     if @shift.save
-      redirect_to shifts_path(teacher_id: @shift.teacher_id)
+      redirect_to shifts_path(teacher_id: @shift.teacher.id)
     else
       render :index
     end

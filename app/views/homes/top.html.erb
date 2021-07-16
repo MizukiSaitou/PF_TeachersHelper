@@ -1,17 +1,14 @@
 <div class="top">
-  <div class="container">
-   　 <div class="row">
-   　   <div class="mx-auto btn-group-vertical" role="group">
-    　    <div class="row mt-5">
-           <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-success" %>
-         </div>
-         <div class="row mt-5 my-5">
-           <%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-primary" %>
-         </div>
-       </div>
-     </div>
-     <div class="message">
-       生徒の明るい未来のために、先生の働きやすい環境のために<br>先生と生徒の架け橋となるためにお手伝いをします
-     </div>
-  </div>
+　<div class="top-box">
+　  <div class="login-button">
+      <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-success" %>
+    </div>
+    <div class="signup-button">
+      <%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-primary" %>
+    </div>
+ 
+    <div class="message">
+      生徒の明るい未来のために、先生の働きやすい環境のために、<br>先生と生徒の架け橋となるためにお手伝いをします
+    </div>
+  </div> 
 </div>
