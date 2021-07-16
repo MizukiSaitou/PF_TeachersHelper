@@ -2,7 +2,7 @@
   <h1>生徒一覧</h1>
   
   <%= form_with url:students_path, method: :get, local: true do |f| %>
-  　<%= f.label :search, "生徒名" %>
+  　<%= f.label :search, "生徒名/学校名" %>
     <%= f.text_field :search %> 
     <%= f.submit"検索" ,:name => nil %> 
   <% end %> 
