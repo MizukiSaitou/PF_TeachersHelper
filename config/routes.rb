@@ -8,6 +8,6 @@ Rails.application.routes.draw do
  resources :records,only:[:index, :create, :edit, :update]
  resources :shifts,only:[:index, :create, :edit, :update, :destroy]
  resources :lessons,only:[:index, :new, :create, :edit, :update, :destroy]
- get '/search' => 'lessons#search'
+ get 'lessons/search' => 'lessons#search'
 
 end

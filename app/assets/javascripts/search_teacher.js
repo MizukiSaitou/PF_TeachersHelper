@@ -1,12 +1,13 @@
 $(document).on('turbolinks:load', function(){
-  const inputForm = $('#subject_id');
+  const inputForm = $('#search_button');
   const url = location.href;
+  // const url = '/lessons/search';
   const searchResult = $('.result ul');
 
   function builtHTML(data){
     let html = `
-    <li>${data.name}
-     <a class="btn select-teacher" data-teacher-id="${data.id}">選択</a>
+    <li class="search-teachers">${data.name}
+     <a class="btn select-teacher" data-teacher-id="${data.id}" data-teacher-name="${data.name}">選択</a>
     </li>
     `
     searchResult.append(html);
@@ -19,11 +20,19 @@ $(document).on('turbolinks:load', function(){
     searchResult.append(html);
   }
 
+  function selectedTeacher(id, name){
+  　let html = 
+   　`
+      <input name='lesson[teacher_id]' type='hidden' value="${id}">
+        <p class="selected_teacher-name">${name}</p>`
+   
+  　$("#selected_teacher").append(html);
+    }
+
   // フォームに入力すると発火する
-  inputForm.on('change', function(){
+  inputForm.on('click', function(){
     const target = $(this).val();
     search(target);
-    console.log(target)
   });
 
   // ajax処理
@@ -45,10 +54,13 @@ $(document).on('turbolinks:load', function(){
       }
     })
     .fail(function(data){
-      alert('非同期通信に失敗しました');
+      alert('通信に失敗しました');
     })
   }
   $(document).on('click', '.select-teacher', function() {
-    console.log('選択した')
+    const id = $(this).data('teacher-id');
+    const name = $(this).data('teacher-name');
+    selectedTeacher(id, name);
+    $('.search-teachers').remove();
   });
 });

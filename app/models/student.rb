@@ -1,5 +1,5 @@
 class Student < ApplicationRecord
-   
+
    has_many :teachers, through: :lessons
    has_many :lessons, dependent: :destroy
    has_many :records, dependent: :destroy
@@ -18,4 +18,13 @@ class Student < ApplicationRecord
       validates :gender
       validates :phone_number
    end
+
+ def self.search(search) #self.はStudent.を意味する
+     if search
+       where(['name LIKE ?', "%#{search}%"]) #検索とnameの部分一致を表示。
+     else  
+       all #全て表示させる
+     end
+ end
+
 end

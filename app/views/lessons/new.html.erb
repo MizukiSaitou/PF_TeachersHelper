@@ -20,22 +20,24 @@
     </tr>
 </table>
 
-<%= form_with url:'/search', method: :get, remote:true do |f| %>
+<%= form_with model:@lesson, local:true do |f| %>
+  <%= f.hidden_field :student_id, value: @student.id %>
   <%= f.label :start_at, "開始時間" %>
   <%= f.datetime_field :start_at %>
   <%= f.label :end_at, "終了時間" %>
   <%= f.datetime_field :end_at %>
   <%= f.collection_select(:subject_id, @subject, :id, :subject_name, {prompt: '選択してください'}) %>
+  <%= button_tag '検索', type: 'button', id: 'search_button' %>
   <div class="result">
       <ul></ul>
   </div>
-  
-  
-  <div id="teacher-list">
-    <%= f.label :@lesson, "担当講師" %>
-    <%= @lesson.teacher.name %>
+
+ <!--jsファイルの講師名がidに代入されて表示されている-->
+  <div id="selected_teacher">
+    <!--%= f.label :@lesson, "担当講師" %>-->
+    <!--%= @lesson.data.name %>-->
   </div>
-  
+
   <%= f.submit"授業決定" %>
 <% end %>
 

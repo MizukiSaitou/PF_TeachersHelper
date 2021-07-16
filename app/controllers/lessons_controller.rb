@@ -10,12 +10,22 @@ class LessonsController < ApplicationController
     @subjects = Subject.where(id: @belong_subject_ids)
     @subject = Subject.all
     @lesson = Lesson.new
+    @shift = Shift.record_date_between
     @subject_teachers = SubjectTeacher.where('subject_id LIKE(?)', "%#{params[:keyword]}%")
+    byebug
     respond_to do |format|
       format.html #htmlを読み込んであげないとエラーが出るのでしっかりと記述
-      format.json 
+      format.json
     end
   end
+
+  # def search
+  #   @subject_teachers = SubjectTeacher.where('subject_id LIKE(?)', "%#{params[:keyword]}%")
+  #   respond_to do |format|
+  #     format.html #htmlを読み込んであげないとエラーが出るのでしっかりと記述
+  #     format.json
+  #   end
+  # end
 
   def create
     @lesson = Lesson.new(lesson_params)
@@ -25,10 +35,7 @@ class LessonsController < ApplicationController
        render :new
     end
   end
-  
-    
-  def search
-  end
+
 
 
   private
