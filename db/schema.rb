@@ -10,11 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_11_051251) do
+ActiveRecord::Schema.define(version: 2021_07_14_033542) do
 
   create_table "lessons", force: :cascade do |t|
     t.integer "student_id", null: false
-    t.integer "working_id", null: false
+    t.integer "teacher_id", null: false
+    t.integer "subject_id", null: false
+    t.datetime "start_at", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -63,6 +65,13 @@ ActiveRecord::Schema.define(version: 2021_07_11_051251) do
     t.integer "japanese_history_accademic_result"
     t.integer "world_history_accademic_result"
     t.integer "geograpy_accademic_result"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "shifts", force: :cascade do |t|
+    t.integer "teacher_id", null: false
+    t.datetime "start_at", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -125,15 +134,6 @@ ActiveRecord::Schema.define(version: 2021_07_11_051251) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
-  create_table "workings", force: :cascade do |t|
-    t.integer "teacher_id", null: false
-    t.integer "subject_id", null: false
-    t.datetime "start_at", null: false
-    t.datetime "end_at", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
 end

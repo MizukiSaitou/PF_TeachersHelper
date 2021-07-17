@@ -181,8 +181,12 @@
         <td><%= record.japanese_history_score %></td>
         <td><%= record.world_history_score %></td>
         <td><%= record.geograpy_score %></td>
+        <td><%= link_to"削除",record_path(record.id, :student_id => student.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
       </tr>
       <% end %>
+
+
+
     <% end %>
   </table>
 </div>
@@ -190,46 +194,47 @@
 <div class="row mt-5">
   <h2>内申点</h2>
   <table class="table table-bordered border text-center">
-      <tr>
-        <th>学期名</th>
-        <th>英表</th>
-        <th>C英</th>
-        <th>数ⅠA</th>
-        <th>数ⅡB</th>
-        <th>数Ⅲ</th>
-        <th>現代文</th>
-        <th>古典</th>
-        <th>化学</th>
-        <th>物理</th>
-        <th>生物</th>
-        <th>日本史</th>
-        <th>世界史</th>
-        <th>地理</th>
-      </tr>
+          <tr>
+            <th>学期名</th>
+            <th>英表</th>
+            <th>C英</th>
+            <th>数ⅠA</th>
+            <th>数ⅡB</th>
+            <th>数Ⅲ</th>
+            <th>現代文</th>
+            <th>古典</th>
+            <th>化学</th>
+            <th>物理</th>
+            <th>生物</th>
+            <th>日本史</th>
+            <th>世界史</th>
+            <th>地理</th>
+          </tr>
 
       <% records.each do |record| %>
-       <% if record.semester_name.present? %>
-      <tr>
-        <td>
-          <% link_to edit_record_path(record, :student_id => student.id) do %>
-            <%= record.semester_name %>
-          <% end %>
-        </td>
-        <td><%= record.ex_english_accademic_result %></td>
-        <td><%= record.cm_english_accademic_result %></td>
-        <td><%= record.math_a_accademic_result %></td>
-        <td><%= record.math_b_accademic_result %></td>
-        <td><%= record.math_c_accademic_result %></td>
-        <td><%= record.modern_writing_accademic_result %></td>
-        <td><%= record.classic_accademic_result %></td>
-        <td><%= record.chemistory_accademic_result %></td>
-        <td><%= record.physics_accademic_result %></td>
-        <td><%= record.biology_accademic_result %></td>
-        <td><%= record.japanese_history_accademic_result %></td>
-        <td><%= record.world_history_accademic_result %></td>
-        <td><%= record.geograpy_accademic_result %></td>
-      </tr>
-      <% end %>
+        <% if record.semester_name.present? %>
+          <tr>
+            <td>
+              <% link_to edit_record_path(record, :student_id => student.id) do %>
+                <%= record.semester_name %>
+              <% end %>
+            </td>
+            <td><%= record.ex_english_accademic_result %></td>
+            <td><%= record.cm_english_accademic_result %></td>
+            <td><%= record.math_a_accademic_result %></td>
+            <td><%= record.math_b_accademic_result %></td>
+            <td><%= record.math_c_accademic_result %></td>
+            <td><%= record.modern_writing_accademic_result %></td>
+            <td><%= record.classic_accademic_result %></td>
+            <td><%= record.chemistory_accademic_result %></td>
+            <td><%= record.physics_accademic_result %></td>
+            <td><%= record.biology_accademic_result %></td>
+            <td><%= record.japanese_history_accademic_result %></td>
+            <td><%= record.world_history_accademic_result %></td>
+            <td><%= record.geograpy_accademic_result %></td>
+            <td><%= link_to"削除",record_path(record.id, :student_id => student.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+          </tr>
+        <% end %>
       <% end %>
     </table>
   </div>

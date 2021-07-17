@@ -1,0 +1,44 @@
+<table>
+    <tr>
+      <th>生徒名</th>
+      <th>学年</th>
+      <th>学校名</th>
+      <th>受講科目</th>
+      <th>特記事項</th>
+    </tr>
+    <tr>
+       <td><%= @student.name %></td>
+       <td><%= @student.grade %></td>
+       <td><%= @student.school %></td>
+       <td>
+         <% @subjects.map(&:subject_name).each do |subject| %>
+           <%= subject %>
+         <% end %>
+        </td>
+        <td><%= @student.notices %></td>
+    </tr>
+</table>
+
+<%= form_with model:@lesson, local:true do |f| %>
+  <%= f.hidden_field :student_id, value: @student.id %>
+  <%= f.label :start_at, "開始時間" %>
+  <%= f.datetime_field :start_at %>
+  <%= f.label :end_at, "終了時間" %>
+  <%= f.datetime_field :end_at %>
+  <%= f.collection_select(:subject_id, @subject, :id, :subject_name, {prompt: '選択してください'}) %>
+  <%= button_tag '検索', type: 'button', id: 'search_button' %>
+  <div class="result">
+      <ul></ul>
+  </div>
+
+ <!--jsファイルのselected_teacherがidに代入されて表示されている-->
+  <div id="selected_teacher">
+    <!--%= f.label :@lesson, "担当講師" %>-->
+    <!--%= @lesson.data.name %>-->
+  </div>
+
+  <%= f.submit"授業決定" %>
+<% end %>
+
+
+
