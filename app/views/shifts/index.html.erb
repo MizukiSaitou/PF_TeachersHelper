@@ -7,12 +7,13 @@
     </tr>
   </table>
 
+  <div>授業時間</div>
+  <div>①13:00-14:30　②14:40-16:10　③17:10-18:40　④18:50-20:20　⑤20:30-22:00</div>
+
   <%= form_with model:@shift, local:true do |f| %>
     <%= f.hidden_field :teacher_id, value: @teacher.id %>
     <%= f.label :start_at, "開始時間" %>
     <%= f.datetime_field :start_at %>
-    <%= f.label :end_at, "終了時間" %>
-    <%= f.datetime_field :end_at %>
 
     <%= f.submit"登録" %>
   <% end %>
@@ -24,7 +25,7 @@
       <% shifts.each do |shift| %>
         <div>
           <%= link_to edit_shift_path(shift, :teacher_id => @teacher.id) do %>
-            <%= shift.start_at.strftime("%H:%M") %>-<%= shift.end_at.strftime("%H:%M") %>
+            <%= shift.start_at.strftime("%H:%M") %>-
           <% end %>
         </div>
   　　<% end %>

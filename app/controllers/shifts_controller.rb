@@ -5,7 +5,7 @@ class ShiftsController < ApplicationController
   def index
     teacher_id = params[:teacher_id]
     @teacher = Teacher.find(teacher_id)
-    @shifts = Shift.all
+    @shifts = Shift.where(teacher_id: teacher_id)
     @shift = Shift.new
   end
 
@@ -36,6 +36,6 @@ class ShiftsController < ApplicationController
   private
 
   def shift_params
-    params.require(:shift).permit(:teacher_id, :start_at, :end_at)
+    params.require(:shift).permit(:teacher_id, :start_at)
   end
 end

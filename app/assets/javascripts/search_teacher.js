@@ -33,7 +33,7 @@ $(document).on('turbolinks:load', function(){
   inputForm.on('click', function(){
     const startAt = $('#lesson_start_at').val();
     const subject = $('#lesson_subject_id').val();
-  
+
     search(startAt, subject);
   });
 
@@ -46,7 +46,6 @@ $(document).on('turbolinks:load', function(){
       dataType: 'json'
     })
     .done(function(data){
-      console.log(data)
       searchResult.empty(); //再度検索した際に前のデータを消す処理
       if (data.length !== 0) {
         data.forEach(function(data) { //dataは配列型に格納されているのでEach文で回す

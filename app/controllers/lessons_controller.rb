@@ -10,18 +10,26 @@ class LessonsController < ApplicationController
     @subjects = Subject.where(id: @belong_subject_ids)
     @subject = Subject.all
     @lesson = Lesson.new
+    # 開始時間の検索
     @shifts = Shift.where(start_at: params[:start_at]) if params[:start_at].present?
     if @shifts.present?
       @shift_teacher_ids = []
       @shifts.each do |shift|
-        @shift_teacher_ids << shift.teacher.id
+        #シフト登録されているteacherのidを配列で@shift_teacher_idsに格納
+        @shift_teacher_ids << shift.teacher.id　　　
       end
+     # teacherに紐づく科目の検索
       @subject_teachers = SubjectTeacher.where(subject_id: params[:subject]) if params[:subject].present?
-      @subject_teacher_ids = @subject_teachers.map(&:teacher_id)
+      #teacherのidを定義
+      @subject_teacher_ids = @subject_teachers.map(&:teacher_id) 
+       #シフトと科目の2つの条件を絞り込む
       @teacher_ids = (@shift_teacher_ids + @subject_teacher_ids).flatten
-      @teacher_ids.select{ |t| @teacher_ids.count(t) > 1 }.uniq
+      #重複を回避する
+      @teacher_ids.select{ |t| @teacher_ids.count(t) > 1 }.uniq 
       @teachers = Teacher.where(id: @teacher_ids)
     end
+
+    
     respond_to do |format|
       format.html #htmlを読み込んであげないとエラーが出るのでしっかりと記述
       format.json {render json: @teachers}
