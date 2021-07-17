@@ -13,7 +13,6 @@ class LessonsController < ApplicationController
     @subject = Subject.all
     @lesson = Lesson.new
     # 開始時間の検索
-    logger.info('ZZZZZ' + f_params[:start_at]) if f_params[:start_at]
     @shifts = Shift.where('start_at >= ? AND start_at < ?', f_params[:start_at].in_time_zone, (f_params[:start_at].to_time + 60).in_time_zone) if f_params[:start_at].present?
     if @shifts.present?
       @shift_teacher_ids = []
