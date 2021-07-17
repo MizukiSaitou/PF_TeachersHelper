@@ -1,10 +1,11 @@
-<table>
+<div class="container">
+  <table class="table-bordered">
     <tr>
-      <th>生徒名</th>
-      <th>学年</th>
-      <th>学校名</th>
-      <th>受講科目</th>
-      <th>特記事項</th>
+      <th style="width: 10%">生徒名</th>
+      <th style="width: 10%">学年</th>
+      <th style="width: 10%">学校名</th>
+      <th style="width: 30%">受講科目</th>
+      <th style="width: 40%">特記事項</th>
     </tr>
     <tr>
        <td><%= @student.name %></td>
@@ -17,28 +18,29 @@
         </td>
         <td><%= @student.notices %></td>
     </tr>
-</table>
+  </table>
 
-<%= form_with model:@lesson, local:true do |f| %>
-  <%= f.hidden_field :student_id, value: @student.id %>
-  <%= f.label :start_at, "開始時間" %>
-  <%= f.datetime_field :start_at %>
-  <%= f.label :end_at, "終了時間" %>
-  <%= f.datetime_field :end_at %>
-  <%= f.collection_select(:subject_id, @subject, :id, :subject_name, {prompt: '選択してください'}) %>
-  <%= button_tag '検索', type: 'button', id: 'search_button' %>
-  <div class="result">
-      <ul></ul>
-  </div>
+  
+  <div>授業時間</div>
+  <div>①13:00-14:30　②14:40-16:10　③17:10-18:40　④18:50-20:20　⑤20:30-22:00</div>
+  
+  <%= form_with model:@lesson, local:true do |f| %>
+    <%= f.hidden_field :student_id, value: @student.id %>
+    <%= f.label :start_at, "開始時間" %>
+    <%= f.datetime_field :start_at %>
+    <%= f.collection_select(:subject_id, @subject, :id, :subject_name, {prompt: '選択してください'}) %>
+    <%= button_tag '検索', type: 'button', id: 'search_button' %>
+    
+    <div class="result">
+        <ul></ul>
+    </div>
 
- <!--jsファイルのselected_teacherがidに代入されて表示されている-->
-  <div id="selected_teacher">
-    <!--%= f.label :@lesson, "担当講師" %>-->
-    <!--%= @lesson.data.name %>-->
-  </div>
+   <!--jsファイルのselected_teacherがidに代入されて表示されている-->
+    <div id="selected_teacher"></div>
 
-  <%= f.submit"授業決定" %>
-<% end %>
+    <%= f.submit"授業決定" %>
+  <% end %>
 
+</div>
 
 
