@@ -42,6 +42,15 @@ class RecordsController < ApplicationController
     end
   end
 
+  def destroy
+    @record = Record.find(params[:id])
+    student_id = params[:student_id]
+    @student = Student.find(student_id)
+    @record.student_id = @student.id
+    @record.destroy
+    redirect_to records_path(student_id: @student.id)
+  end
+
   private
 
   def record_params

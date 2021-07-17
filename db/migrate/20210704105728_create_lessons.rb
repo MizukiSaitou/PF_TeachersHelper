@@ -5,7 +5,6 @@ class CreateLessons < ActiveRecord::Migration[5.2]
       t.integer :teacher_id, null: false
       t.integer :subject_id, null: false
       t.datetime :start_at,  null: false
-      t.datetime :end_at,    null: false
 
       t.timestamps
     end

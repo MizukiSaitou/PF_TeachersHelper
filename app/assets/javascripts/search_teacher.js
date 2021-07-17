@@ -21,29 +21,32 @@ $(document).on('turbolinks:load', function(){
   }
 
   function selectedTeacher(id, name){
-  　let html = 
+  　let html =
    　`
       <input name='lesson[teacher_id]' type='hidden' value="${id}">
         <p class="selected_teacher-name">${name}</p>`
-   
+
   　$("#selected_teacher").append(html);
     }
 
   // フォームに入力すると発火する
   inputForm.on('click', function(){
-    const target = $(this).val();
-    search(target);
+    const startAt = $('#lesson_start_at').val();
+    const subject = $('#lesson_subject_id').val();
+  
+    search(startAt, subject);
   });
 
   // ajax処理
-  function search(target){
+  function search(startAt, subject){
     $.ajax({
       type: 'GET',
       url: url,
-      data: {keyword: target},
+      data: {start_at: startAt, subject: subject},
       dataType: 'json'
     })
     .done(function(data){
+      console.log(data)
       searchResult.empty(); //再度検索した際に前のデータを消す処理
       if (data.length !== 0) {
         data.forEach(function(data) { //dataは配列型に格納されているのでEach文で回す

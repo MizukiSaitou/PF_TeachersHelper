@@ -1,5 +1,4 @@
-json.array! @subject_teachers do |st|
-  json.id st.teacher.id
-  json.name st.teacher.name
+json.array! @teachers do |t|
+  json.id t.id
+  json.name t.name
 end
-
