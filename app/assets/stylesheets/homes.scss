@@ -26,6 +26,8 @@ ul{
 .top{
   height: 100%;
   background-color: #DCDCDC;
+  padding-top: 20px;
+  padding-bottom: 50px;
 }
 
 header,footer{
@@ -43,12 +45,14 @@ header,footer{
 
 .link {
   text-decoration: none;
-  color: white ;
-}
+  color: white;
+  hover{text-decoration: none;}
+  hover{color: white;}
+ }
 
 .top-box {
-  height: 100%;
-  width: 50%;
+  height: 500px;
+  width: 500px;
   margin: 0 auto;
   text-align: center;
   background-color: white;

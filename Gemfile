@@ -67,6 +67,7 @@ gem 'jquery-rails'
 gem  "simple_calendar", "~> 2.4"
 gem 'kaminari','~> 1.2.1'
 gem 'font-awesome-sass', '~> 5.13'
+gem 'gimei'
 gem 'rspec-rails'
 gem 'dotenv-rails'
 group :production do

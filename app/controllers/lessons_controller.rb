@@ -1,11 +1,11 @@
 class LessonsController < ApplicationController
 
   def index
+    @lessons = Lesson.all
   end
 
   def new
     f_params = params.permit(:student_id, :start_at, :subject)
-
     student_id = f_params[:student_id]
     @student = Student.find(student_id)
     @belong_subject_ids = @student.subjects.ids

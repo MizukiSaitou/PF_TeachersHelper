@@ -28,3 +28,5 @@ Subject.create!(subject_name: "生物")
 Subject.create!(subject_name: "日本史")
 Subject.create!(subject_name: "世界史")
 Subject.create!(subject_name: "地理")
+
+

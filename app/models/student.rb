@@ -15,7 +15,7 @@ class Student < ApplicationRecord
       validates :name_kana
       validates :grade
       validates :school
-      validates :genders
+      validates :gender
       validates :phone_number
    end
 
