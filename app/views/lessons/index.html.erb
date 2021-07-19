@@ -11,18 +11,30 @@
               <th style="width: 30%">担当講師名</th>
             </tr>
         </thead>
-        
+
         <tbody>
           <% @lessons.each do |lesson| %>
             <tr>
-              <td><%= lesson.start_at.strftime("%Y-%m-%d %H:%M") %></td>
-              <td><%= lesson.student.name %></td>
+              <td>
+                <%= link_to edit_lesson_path(lesson, student_id: @student.id) do %>
+                  <%= lesson.start_at.strftime("%Y-%m-%d %H:%M") %>
+                <% end %>
+              </td>
+              <td>
+                <!--%= link_to student_path(@student) do %>-->
+                  <%= lesson.student.name %>
+                <!--% end %>-->
+              </td>
               <td><%= lesson.subject.subject_name %></td>
-              <td><%= lesson.teacher.name %></td>
+              <td>
+                <!--%= link_to teacher_path(@teacher) do %>-->
+                  <%= lesson.teacher.name %>
+                <!--% end %>-->
+              </td>
             </tr>
           <% end %>
         </tbody>
       </table>
     </div>
-  </div>  
-</div>  
+  </div>
+</div>

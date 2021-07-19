@@ -4,7 +4,6 @@
       <div class="row mt-5">
 
          <div class="mx-auto">
-
            <%= form_with model:@student, local:true do |f| %>
              <div class="form-group">
               <ul class="list-group list-group-horizontal">
@@ -24,9 +23,9 @@
               <ul class="list-group list-group-horizontal">
                 <li class="list-group-item" style="width: 200px;"><%= f.label :学年 %></li>
                 <li class="list-group-item" style="width: 215px;">
-                 <%= f.select :grade, [["小1", "小学1年生"], ["小2", "小学2年生"],["小3", "小学3年生"],["小4", "小学4年生"],["小5", "小学5年生"],["小6", "小学6年生"],
-                                       ["中1", "中学1年生"],["中2", "中学2年生"],["中3", "中学3年生"],
-                                       ["高1", "高校1年生"],["高2", "高校2年生"],["高3", "高校3年生"],["卒生", "浪人生"]], include_blank: "学年選択" %>
+                  <%= f.select :grade, [["小1", "小学1年生"], ["小2", "小学2年生"],["小3", "小学3年生"],["小4", "小学4年生"],["小5", "小学5年生"],["小6", "小学6年生"],
+                                        ["中1", "中学1年生"],["中2", "中学2年生"],["中3", "中学3年生"],
+                                        ["高1", "高校1年生"],["高2", "高校2年生"],["高3", "高校3年生"],["卒生", "浪人生"]], include_blank: "学年選択" %>
                 </li>
               </ul>
              </div>
@@ -72,20 +71,18 @@
              </div>
 
              <div class="form-group">
-              <u class="list-group list-group-horizontal">
+              <ul class="list-group list-group-horizontal">
                  <li class="list-group-item" style="width: 200px;"><%= f.label :在籍 %></li>
                  <li class="list-group-item" style="width: 215px;">
                    <%= f.radio_button :is_deleted, false %>
                    <%= f.label :is_deleted, "在籍中", value:false %>
                    <%= f.radio_button :is_deleted, true %>
                    <%= f.label :is_deleted, "退塾", value:true %>
-                  </li>
+                 </li>
               </ul>
              </div>
-
-              <%= f.submit"変更登録" %>
+                    <%= f.submit"変更登録" %>
             <% end %>
-
         </div>
       </div>
   </div>
