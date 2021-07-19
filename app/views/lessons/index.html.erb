@@ -1,26 +1,28 @@
-<div class="container">
-  <div class="row mx-auto">
-    <table>
-      <thead>
-        <tr>
-          <th>授業日時</th>
-          <th>生徒名</th>
-          <th>授業科目</th>
-          <th>担当講師名</th>
-        </tr>
-      </thead>
-      
-      <tbody>
-        <% @lessons.each do |lesson| %>
-        <tr>
-          <td><%= lesson.start_at.strftime("%Y-%m-%d %H:%M") %></td>
-          <td><%= lesson.student.name %></td>
-          <td><%= lesson.subject.subject_name %></td>
-          <td><%= lesson.teacher.name %></td>
-        </tr>
-        <% end %>
+<div class="lesson-box">
+  <div class="container">
+    <div class="row mx-auto">
+      <h1>授業一覧</h1>
+      <table  class="table table-bordered text-center">
+        <thead class="table-secondary">
+            <tr>
+              <th style="width: 30%">授業日時</th>
+              <th style="width: 30%">生徒名</th>
+              <th style="width: 10%">授業科目</th>
+              <th style="width: 30%">担当講師名</th>
+            </tr>
+        </thead>
         
-      </tbody>
-    </table>
-  </div>
+        <tbody>
+          <% @lessons.each do |lesson| %>
+            <tr>
+              <td><%= lesson.start_at.strftime("%Y-%m-%d %H:%M") %></td>
+              <td><%= lesson.student.name %></td>
+              <td><%= lesson.subject.subject_name %></td>
+              <td><%= lesson.teacher.name %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>  
 </div>  

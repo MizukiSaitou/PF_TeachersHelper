@@ -3,7 +3,7 @@ class TeachersController < ApplicationController
   before_action :authenticate_user!, except: [:top]
 
   def index
-    @teachers = Teacher.order(:name).page(params[:page]).search(params[:search])
+    @teachers = Teacher.order(:name).page(params[:page]).per(10).search(params[:search])
     respond_to do |format|
       format.html
       format.csv do |csv|

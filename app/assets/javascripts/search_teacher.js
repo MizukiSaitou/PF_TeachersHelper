@@ -1,7 +1,7 @@
 $(document).on('turbolinks:load', function(){
   const inputForm = $('#search_button');
-  const url = location.href;
-  // const url = '/lessons/search';
+  // const url = "https://2d912753dcd343c8a0629964bd698999.vfs.cloud9.ap-northeast-1.amazonaws.com/lessons/search";
+  const url = '/lessons/search';
   const searchResult = $('.result ul');
 
   function builtHTML(data){

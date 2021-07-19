@@ -4,7 +4,7 @@ class StudentsController < ApplicationController
   require 'csv'
 
   def index
-    @students = Student.order(:name).page(params[:page]).search(params[:search])
+    @students = Student.order(:name).page(params[:page]).per(10).search(params[:search])
     # respond_to はリクエストに応じた処理を行うメソッドです。
     # 通常時はhtmlをリクエストしているので、処理は記述していません。
     # viewのlink_toでformatをcsvとして指定しているので、
