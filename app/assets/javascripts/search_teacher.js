@@ -1,7 +1,6 @@
 $(document).on('turbolinks:load', function(){
   const inputForm = $('#search_button');
-  const url = location.href;
-  // const url = '/lessons/search';
+  const url = '/lessons/search';
   const searchResult = $('.result ul');
 
   function builtHTML(data){
@@ -46,7 +45,6 @@ $(document).on('turbolinks:load', function(){
       dataType: 'json'
     })
     .done(function(data){
-      console.log(data)
       searchResult.empty(); //再度検索した際に前のデータを消す処理
       if (data === null || data.length === 0) {
         NoResult('該当する講師はいません')

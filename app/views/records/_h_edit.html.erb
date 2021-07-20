@@ -1,4 +1,5 @@
-<div class="row mt-5">
+<% if record.test_name.present? %>
+  <div class="row mt-5">
     <h3>テスト点入力</h3>
       <div class="row">
         <%= form_with model:record, local:true do |f| %>
@@ -64,11 +65,13 @@
               <%= f.text_field :geograpy_score, class: 'form-control' %>
             </div>
           </div>
-          <%= f.submit"テスト結果を修正" %>
+              <%= f.submit"テスト結果を修正" %>
         <% end %>
       </div>
-    </div>
+  </div>
+<% end %>
 
+<% if record.semester_name.present? %>
   <div class="row mt-5">
     <h3>内申点入力</h3>
       <div class="row">
@@ -139,3 +142,4 @@
         <% end %>
     </div>
   </div>
+<% end %>

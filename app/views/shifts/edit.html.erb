@@ -1,8 +1,27 @@
- <%= form_with model:@shift, local:true do |f| %>
-    <!--%= f.collection_select(:subject_id, @teacher.subjects, :id, :subject_name) %>-->
-    <%= f.label :start_at, "開始時間" %>
-    <%= f.datetime_select :start_at %>
-    <%= f.label :end_at, "終了時間" %>
-    <%= f.datetime_select :end_at %>
-    <%= f.submit"登録" %>
-  <% end %>
+<div class="container">
+  <h1>シフト修正</h1>
+  <div class="row ml-3 mt-3">
+    <table>
+      <tr>
+         <th class="table-bordered table-secondary" style="width: 80px">講師名</th>
+         <td class="table-bordered table-light text-center" style="width: 150px"><%= @teacher.name %></td>
+         <td class="text-center" style="width: 50px"><%= link_to "戻る",shifts_path(teacher_id: @teacher.id) %></td>
+      </tr>
+    </table>
+  </div>
+
+    <div class="mt-3">
+      <div class="text">授業時間</div>
+      <div class="text">①13:00-14:30　②14:40-16:10　③17:10-18:40　④18:50-20:20　⑤20:30-22:00</div>
+    </div>
+
+    <div class="row ml-3 my-3">
+      <%= form_with model:@shift, local:true do |f| %>
+        <%= f.hidden_field :teacher_id, value: @teacher.id %>
+        <%= f.label :start_at, "開始時間" %>
+        <%= f.datetime_field :start_at %>
+
+        <%= f.submit"登録" %>
+      <% end %>
+    </div>
+</div>
