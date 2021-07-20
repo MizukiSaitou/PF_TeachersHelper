@@ -1,10 +1,10 @@
 <div class="container">
   <h1>シフト登録</h1>
   <div class="row ml-3 mt-3">
-    <table>
+    <table class="table-bordered">
       <tr>
-         <th class="table-bordered table-secondary" style="width: 80px">講師名</th>
-         <td class="table-bordered table-light text-center" style="width: 150px"><%= @teacher.name %></td>
+         <th class="table-secondary" style="width: 80px">講師名</th>
+         <td class="table-light text-center" style="width: 150px"><%= @teacher.name %></td>
          <td class="text-center" style="width: 50px"><%= link_to "戻る", teacher_path(@teacher) %></td>
       </tr>
     </table>

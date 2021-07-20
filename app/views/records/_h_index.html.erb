@@ -144,7 +144,7 @@
   <div class="row mt-5">
     <h2>テスト結果</h2>
     <table class="table table-bordered border text-center">
-      <tr class="record-table">
+      <tr class="table-secondary">
         <th>テスト名</th>
         <th>英表</th>
         <th>C英</th>
@@ -164,7 +164,7 @@
 
       <% records.each do |record| %>
       <% if record.test_name.present? %>
-      <tr class="record-table">
+      <tr class="table-light">
         <td>
           <%= link_to edit_record_path(record, :student_id => student.id) do %>
             <%= record.test_name %>
@@ -195,7 +195,7 @@
   <div class="row mt-5">
     <h2>内申点</h2>
     <table class="table table-bordered border text-center">
-            <tr class="record-table">
+            <tr class="table-secondary">
               <th>学期名</th>
               <th>英表</th>
               <th>C英</th>
@@ -215,7 +215,7 @@
   
         <% records.each do |record| %>
           <% if record.semester_name.present? %>
-            <tr class="record-table">
+            <tr class="rtable-light">
               <td>
                 <% link_to edit_record_path(record, :student_id => student.id) do %>
                   <%= record.semester_name %>

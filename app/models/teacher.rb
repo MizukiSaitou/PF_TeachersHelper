@@ -16,14 +16,14 @@ class Teacher < ApplicationRecord
      validates :university
      validates :undergraduate
      validates :gender
-     validates :phone_number
+     validates :phone_number, format:{ with: /\A\d{10,11}\z/ }
    end
 
-   def self.search(search) #self.はStudent.を意味する
-     if search
+    def self.search(search) #self.はStudent.を意味する
+      if search
        where(['name LIKE ?', "%#{search}%"]) #検索とnameの部分一致を表示。
-     else
+      else
        all #全て表示させる
-     end
+      end
     end
 end

@@ -16,7 +16,7 @@ class Student < ApplicationRecord
       validates :grade
       validates :school
       validates :gender
-      validates :phone_number
+      validates :phone_number, format:{ with: /\A\d{10,11}\z/ }
    end
 
  def self.search(search) #self.はStudent.を意味する

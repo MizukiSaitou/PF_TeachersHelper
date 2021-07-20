@@ -10,15 +10,15 @@
           <th style="width: 200px">特記事項</th>
         </tr>
         <tr class="lesson-table">
-           <td><%= @student.name %></td>
-           <td><%= @student.grade %></td>
-           <td><%= @student.school %></td>
+           <td><%= @lesson.student.name %></td>
+           <td><%= @lesson.student.grade %></td>
+           <td><%= @lesson.student.school %></td>
            <td>
-             <% @subjects.map(&:subject_name).each do |subject| %>
+             <% @lesson.student.subjects.map(&:subject_name).each do |subject| %>
                <%= subject %>
              <% end %>
             </td>
-            <td><%= @student.notices %></td>
+            <td><%= @lesson.student.notices %></td>
         </tr>
       </table>
     </div>
@@ -30,7 +30,6 @@
 
     <div class="row ml-3 my-3">
       <%= form_with model:@lesson, local:true do |f| %>
-        <%= f.hidden_field :student_id, value: @student.id %>
         <%= f.label :start_at, "開始時間" %>
         <%= f.datetime_field :start_at %>
         <%= f.collection_select(:subject_id, @subject, :id, :subject_name, {prompt: '選択してください'}) %>

@@ -86,11 +86,11 @@
     </div>
   </div>
 
-  
+
   <div class="row mt-5">
     <h2>テスト結果</h2>
     <table class="table table-bordered border text-center">
-          <tr class="record-table">
+          <tr class="table-secondary">
             <th>テスト名</th>
             <th>英語</th>
             <th>数学</th>
@@ -102,7 +102,7 @@
 
       <% records.each do |record| %>
         <% if record.test_name.present? %>
-          <tr class="record-table">
+          <tr class="table-light">
             <td>
               <%= link_to edit_record_path(record, :student_id => student.id) do %>
     　          <%= record.test_name %></td>
@@ -123,7 +123,7 @@
   <div class="row mt-5">
     <h2>内申点</h2>
     <table class="table table-bordered border text-center">
-            <tr class="record-table">
+            <tr class="table-secondary">
               <th>学期</th>
               <th>英語</th>
               <th>数学</th>
@@ -136,10 +136,10 @@
               <th>技/家</th>
               <th></th>
             </tr>
-  
+
         <% records.each do |record| %>
           <% if record.semester_name.present? %>
-            <tr class="record-table">
+            <tr class="table-light">
               <td>
                 <%= link_to edit_record_path(record, :student_id => student.id) do %>
                   <%= record.semester_name %>
@@ -160,4 +160,3 @@
         <% end %>
     </table>
   </div>
-  

@@ -3,17 +3,17 @@
     <h1>成績</h1>
       <div class="row mt-3">
           <div class="offset-md-4"></div>
-          <table class="col-md-6">
-            <thead class="table-bordered">
-              <tr  class="record-table">
+          <table class="col-md-6 table-bordered">
+            <thead class="table-secondary">
+              <tr>
                 <td style="width: 30%">学校名</td>
                 <td style="width: 20%">学年</td>
                 <td style="width: 50%">生徒名</td>
               </tr>
             </thead>
       
-            <tbody class="table-bordered">
-              <tr  class="record-table">
+            <tbody class="table-light text-center">
+              <tr>
                 <td><%= @student.school %></td>
                 <td><%= @student.grade %></td>
                 <td><%= @student.name %></td>
@@ -22,7 +22,7 @@
           </table>
         </div>
   
-    <% if @student.grade == '高1年生' || @student.grade == '高校2年生' || @student.grade == '高3年生' %>
+    <% if @student.grade == '高校1年生' || @student.grade == '高校2年生' || @student.grade == '高校3年生' %>
       <%= render'records/h_index', record: @record, student: @student, records: @records %>
     <% else %>
       <%= render'records/jh_index', record: @record, student: @student, records: @records %>
