@@ -38,8 +38,10 @@ Student.create!(name: "中川　潤",
                 is_deleted: false,
                 phone_number: "09012345678",
                 notices: "",
-                subject_students_attributes: [4],
                 )
+
+SubjectStudent.create!(student_id:1,subject_id:4)
+
 
 Student.create!(name: "山中　大介",
                 name_kana: "やまなか　だいすけ",
@@ -49,8 +51,11 @@ Student.create!(name: "山中　大介",
                 is_deleted: false,
                 phone_number: "09091234567",
                 notices: "",
-                subject_students_attributes: [5,7],
                 )
+
+SubjectStudent.create!(student_id:2,subject_id:5)
+SubjectStudent.create!(student_id:2,subject_id:7)
+
 
 Student.create!(name: "松田　雄二",
                 name_kana: "まつだ　ゆうじ",
@@ -60,8 +65,10 @@ Student.create!(name: "松田　雄二",
                 is_deleted: false,
                 phone_number: "09089123456",
                 notices: "",
-                subject_students_attributes: [12],
                 )
+
+SubjectStudent.create!(student_id:3,subject_id:12)
+
 
 Student.create!(name: "森　義昭",
                 name_kana: "もり　よしあき",
@@ -71,8 +78,12 @@ Student.create!(name: "森　義昭",
                 is_deleted: false,
                 phone_number: "09078912345",
                 notices: "東大志望、レベルの高い講師希望",
-                subject_students_attributes: [10,11,12],
                 )
+
+SubjectStudent.create!(student_id:4,subject_id:10)
+SubjectStudent.create!(student_id:4,subject_id:11)
+SubjectStudent.create!(student_id:4,subject_id:12)
+
 
 Student.create!(name: "竹内　悠太",
                 name_kana: "たけうち　ゆうた",
@@ -82,8 +93,10 @@ Student.create!(name: "竹内　悠太",
                 is_deleted: false,
                 phone_number: "09067891234",
                 notices: "",
-                subject_students_attributes: [4,5],
                 )
+
+SubjectStudent.create!(student_id:5,subject_id:4)
+SubjectStudent.create!(student_id:5,subject_id:5)
 
 Student.create!(name: "土屋　武",
                 name_kana: "つちや　たけし",
@@ -93,8 +106,10 @@ Student.create!(name: "土屋　武",
                 is_deleted: false,
                 phone_number: "09056789123",
                 notices: "優しく教えてくれる講師希望",
-                subject_students_attributes: [4],
                 )
+
+SubjectStudent.create!(student_id:6,subject_id:4)
+
 
 Student.create!(name: "荒木　智",
                 name_kana: "あらき　さとし",
@@ -103,9 +118,11 @@ Student.create!(name: "荒木　智",
                 gender: 0,
                 is_deleted: false,
                 phone_number: "09045678912",
-                notices: "楽しく授業ができる講師",
-                subject_students_attributes: [2],
+                notices: "楽しく授業ができる講師が良い",
                 )
+
+SubjectStudent.create!(student_id:7,subject_id:2)
+
 
 Student.create!(name: "佐野　雄一郎",
                 name_kana: "さの　ゆういちろう",
@@ -115,8 +132,10 @@ Student.create!(name: "佐野　雄一郎",
                 is_deleted: false,
                 phone_number: "09034567891",
                 notices: "",
-                subject_students_attributes: [16],
                 )
+
+SubjectStudent.create!(student_id:8,subject_id:16)
+
 
 Student.create!(name: "池田　里美",
                 name_kana: "いけだ　さとみ",
@@ -126,8 +145,11 @@ Student.create!(name: "池田　里美",
                 is_deleted: false,
                 phone_number: "09023456789",
                 notices: "女性の講師希望",
-                subject_students_attributes: [9,11],
                 )
+
+SubjectStudent.create!(student_id:9,subject_id:9)
+SubjectStudent.create!(student_id:9,subject_id:11)
+
 
 Student.create!(name: "木村　由紀",
                 name_kana: "きむら　ゆき",
@@ -137,8 +159,10 @@ Student.create!(name: "木村　由紀",
                 is_deleted: false,
                 phone_number: "09012345678",
                 notices: "",
-                subject_students_attributes: [4],
                 )
+
+SubjectStudent.create!(student_id:10,subject_id:4)
+
 
 Student.create!(name: "藤原　有紗",
                 name_kana: "ふじわら　ありさ",
@@ -148,8 +172,10 @@ Student.create!(name: "藤原　有紗",
                 is_deleted: false,
                 phone_number: "09098765432",
                 notices: "",
-                subject_students_attributes: [6],
                 )
+
+SubjectStudent.create!(student_id:11,subject_id:6)
+
 
 Student.create!(name: "浅野　夏菜子",
                 name_kana: "あさの　かなこ",
@@ -159,8 +185,10 @@ Student.create!(name: "浅野　夏菜子",
                 is_deleted: false,
                 phone_number: "09087654321",
                 notices: "",
-                subject_students_attributes: [13],
                 )
+
+SubjectStudent.create!(student_id:12,subject_id:13)
+
 
 Student.create!(name: "村田　まみ",
                 name_kana: "むらた　まみ",
@@ -170,8 +198,10 @@ Student.create!(name: "村田　まみ",
                 is_deleted: false,
                 phone_number: "09076543219",
                 notices: "",
-                subject_students_attributes: [1],
                 )
+
+SubjectStudent.create!(student_id:13,subject_id:1)
+
 
 Student.create!(name: "水野　友希",
                 name_kana: "みずの　ゆき",
@@ -181,8 +211,10 @@ Student.create!(name: "水野　友希",
                 is_deleted: false,
                 phone_number: "09065432198",
                 notices: "",
-                subject_students_attributes: [7],
                 )
+
+SubjectStudent.create!(student_id:14,subject_id:7)
+
 
 Student.create!(name: "石井　麗華",
                 name_kana: "いしい　れいか",
@@ -192,8 +224,11 @@ Student.create!(name: "石井　麗華",
                 is_deleted: false,
                 phone_number: "09054321987",
                 notices: "",
-                subject_students_attributes: [4,5],
                 )
+
+SubjectStudent.create!(student_id:15,subject_id:4)
+SubjectStudent.create!(student_id:15,subject_id:5)
+
 
 Student.create!(name: "新田　理佐",
                 name_kana: "にった　りさ",
@@ -203,8 +238,10 @@ Student.create!(name: "新田　理佐",
                 is_deleted: false,
                 phone_number: "09043219876",
                 notices: "",
-                subject_students_attributes: [9],
                 )
+
+SubjectStudent.create!(student_id:16,subject_id:9)
+
 
 Teacher.create!(name: "小宮　詩織",
                 name_kana: "こみや　しおり",
@@ -215,8 +252,21 @@ Teacher.create!(name: "小宮　詩織",
                 is_deleted: false,
                 phone_number: "08012345678",
                 notices: "",
-                subject_teachers_attributes: [1,2,3,4,5,6,8,9,10,11,14,15],
                 )
+
+SubjectTeacher.create!(teacher_id:1,subject_id:1)
+SubjectTeacher.create!(teacher_id:1,subject_id:2)
+SubjectTeacher.create!(teacher_id:1,subject_id:3)
+SubjectTeacher.create!(teacher_id:1,subject_id:4)
+SubjectTeacher.create!(teacher_id:1,subject_id:5)
+SubjectTeacher.create!(teacher_id:1,subject_id:6)
+SubjectTeacher.create!(teacher_id:1,subject_id:8)
+SubjectTeacher.create!(teacher_id:1,subject_id:9)
+SubjectTeacher.create!(teacher_id:1,subject_id:10)
+SubjectTeacher.create!(teacher_id:1,subject_id:11)
+SubjectTeacher.create!(teacher_id:1,subject_id:14)
+SubjectTeacher.create!(teacher_id:1,subject_id:15)
+
 
 Teacher.create!(name: "牧　優子",
                 name_kana: "まき　ゆうこ",
@@ -227,8 +277,19 @@ Teacher.create!(name: "牧　優子",
                 is_deleted: false,
                 phone_number: "08091234567",
                 notices: "",
-                subject_teachers_attributes: [1,2,3,4,5,7,11,12,13,16],
                 )
+
+SubjectTeacher.create!(teacher_id:2,subject_id:1)
+SubjectTeacher.create!(teacher_id:2,subject_id:2)
+SubjectTeacher.create!(teacher_id:2,subject_id:3)
+SubjectTeacher.create!(teacher_id:2,subject_id:4)
+SubjectTeacher.create!(teacher_id:2,subject_id:5)
+SubjectTeacher.create!(teacher_id:2,subject_id:7)
+SubjectTeacher.create!(teacher_id:2,subject_id:11)
+SubjectTeacher.create!(teacher_id:2,subject_id:12)
+SubjectTeacher.create!(teacher_id:2,subject_id:13)
+SubjectTeacher.create!(teacher_id:2,subject_id:16)
+
 
 Teacher.create!(name: "白石　沙智",
                 name_kana: "しらいし　さち",
@@ -239,8 +300,13 @@ Teacher.create!(name: "白石　沙智",
                 is_deleted: false,
                 phone_number: "08089123456",
                 notices: "英検対策可能",
-                subject_teachers_attributes: [3,4,9,10],
                 )
+
+SubjectTeacher.create!(teacher_id:3,subject_id:3)
+SubjectTeacher.create!(teacher_id:3,subject_id:4)
+SubjectTeacher.create!(teacher_id:3,subject_id:9)
+SubjectTeacher.create!(teacher_id:3,subject_id:10)
+
 
 Teacher.create!(name: "広瀬　真司",
                 name_kana: "ひろせ　しんじ",
@@ -251,8 +317,26 @@ Teacher.create!(name: "広瀬　真司",
                 is_deleted: false,
                 phone_number: "08078912345",
                 notices: "",
-                subject_teachers_attributes: [1,2,3,4,5,6,7,8,9,10,11,12,13,16,17,18,20],
                 )
+
+SubjectTeacher.create!(teacher_id:4,subject_id:1)
+SubjectTeacher.create!(teacher_id:4,subject_id:2)
+SubjectTeacher.create!(teacher_id:4,subject_id:3)
+SubjectTeacher.create!(teacher_id:4,subject_id:4)
+SubjectTeacher.create!(teacher_id:4,subject_id:5)
+SubjectTeacher.create!(teacher_id:4,subject_id:6)
+SubjectTeacher.create!(teacher_id:4,subject_id:7)
+SubjectTeacher.create!(teacher_id:4,subject_id:8)
+SubjectTeacher.create!(teacher_id:4,subject_id:9)
+SubjectTeacher.create!(teacher_id:4,subject_id:10)
+SubjectTeacher.create!(teacher_id:4,subject_id:11)
+SubjectTeacher.create!(teacher_id:4,subject_id:12)
+SubjectTeacher.create!(teacher_id:4,subject_id:13)
+SubjectTeacher.create!(teacher_id:4,subject_id:16)
+SubjectTeacher.create!(teacher_id:4,subject_id:17)
+SubjectTeacher.create!(teacher_id:4,subject_id:18)
+SubjectTeacher.create!(teacher_id:4,subject_id:20)
+
 
 Teacher.create!(name: "村井　正弘",
                 name_kana: "むらい　まさひろ",
@@ -263,8 +347,14 @@ Teacher.create!(name: "村井　正弘",
                 is_deleted: false,
                 phone_number: "08067891234",
                 notices: "",
-                subject_teachers_attributes: [2,5,11,12,13],
                 )
+
+SubjectTeacher.create!(teacher_id:5,subject_id:2)
+SubjectTeacher.create!(teacher_id:5,subject_id:5)
+SubjectTeacher.create!(teacher_id:5,subject_id:11)
+SubjectTeacher.create!(teacher_id:5,subject_id:12)
+SubjectTeacher.create!(teacher_id:5,subject_id:13)
+
 
 Teacher.create!(name: "植木　光",
                 name_kana: "うえき　ひかる",
@@ -275,5 +365,16 @@ Teacher.create!(name: "植木　光",
                 is_deleted: false,
                 phone_number: "08056789123",
                 notices: "",
-                subject_teachers_attributes: [1,3,4,6,8,9,10,14,15,18,19],
                 )
+
+SubjectTeacher.create!(teacher_id:6,subject_id:1)
+SubjectTeacher.create!(teacher_id:6,subject_id:3)
+SubjectTeacher.create!(teacher_id:6,subject_id:4)
+SubjectTeacher.create!(teacher_id:6,subject_id:6)
+SubjectTeacher.create!(teacher_id:6,subject_id:8)
+SubjectTeacher.create!(teacher_id:6,subject_id:9)
+SubjectTeacher.create!(teacher_id:6,subject_id:10)
+SubjectTeacher.create!(teacher_id:6,subject_id:14)
+SubjectTeacher.create!(teacher_id:6,subject_id:15)
+SubjectTeacher.create!(teacher_id:6,subject_id:18)
+SubjectTeacher.create!(teacher_id:6,subject_id:19)
