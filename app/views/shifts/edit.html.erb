@@ -24,4 +24,8 @@
         <%= f.submit"登録" %>
       <% end %>
     </div>
+
+    <div>
+      <%= link_to"削除", shift_path(@shift, :teacher_id => @shift.teacher_id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+    </div>
 </div>

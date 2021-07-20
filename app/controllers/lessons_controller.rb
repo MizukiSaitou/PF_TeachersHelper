@@ -1,9 +1,7 @@
 class LessonsController < ApplicationController
 
   def index
-    # student_id = params[:student_id]
-    # @student = Student.find(student_id)
-    @lessons = Lesson.all
+    @lessons = Lesson.order(start_at: :desc).page(params[:page]).per(10)
   end
 
   def new
@@ -18,9 +16,6 @@ class LessonsController < ApplicationController
 
   def edit
     @lesson = Lesson.find(params[:id])
-    # @student = @lesson.student_id
-    # @belong_subject_ids = @student.subjects.ids
-    # @subjects = Subject.where(id: @belong_subject_ids)
     @subject = Subject.all
   end
 
@@ -57,7 +52,7 @@ class LessonsController < ApplicationController
        render :edit
     end
   end
-  
+
   def destroy
     @lesson = Lesson.find(params[:id])
     @lesson.destroy

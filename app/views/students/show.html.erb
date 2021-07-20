@@ -3,9 +3,12 @@
     <h1>生徒情報</h1>
       <div class="row mt-5">
         <div class="col-md-3">
+          <% if @student.is_deleted == false %>
           <div class="new">
             <%= link_to"授業を組む", new_lesson_path(student_id: @student.id) %>
           </div>
+          <% end %>
+
           <div class="making-record">
             <% if @student.grade == '中学1年生' || @student.grade == '中学2年生' || @student.grade == '中学年生' || @student.grade == '高校1年生' || @student.grade == '高校2年生' || @student.grade == '高3年生' %>
               <%= link_to"成績管理", records_path(student_id: @student.id) %>
