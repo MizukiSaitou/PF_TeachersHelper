@@ -34,3 +34,27 @@ h1{
   font-size: 30px;
   padding-top: 20px;
 }
+
+
+.container {
+      padding-bottom: 60px;
+      box-sizing: border-box;
+}
+
+footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+}
+
+.btn-delete{
+  color: #fff;
+  background-color: #FF6347;
+  border-color: #FF6347;
+}
+
+.btn-back{
+  color: #fff;
+  background-color: #708090;
+  border-color:#708090;
+}

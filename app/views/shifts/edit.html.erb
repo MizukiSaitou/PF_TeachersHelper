@@ -3,9 +3,10 @@
   <div class="row ml-3 mt-3">
     <table>
       <tr>
-         <th class="table-bordered table-secondary" style="width: 80px">講師名</th>
+         <th class="table-bordered table-secondary text-center" style="width: 80px">講師名</th>
          <td class="table-bordered table-light text-center" style="width: 150px"><%= @teacher.name %></td>
-         <td class="text-center" style="width: 50px"><%= link_to "戻る",shifts_path(teacher_id: @teacher.id) %></td>
+         <td style="width: 50px"></td>
+         <td class="text-center" style="width: 150px"><%= link_to "シフトに戻る",shifts_path(teacher_id: @teacher.id), class: "btn btn-back" %></td>
       </tr>
     </table>
   </div>
@@ -16,12 +17,18 @@
     </div>
 
     <div class="row ml-3 my-3">
-      <%= form_with model:@shift, local:true do |f| %>
-        <%= f.hidden_field :teacher_id, value: @teacher.id %>
-        <%= f.label :start_at, "開始時間" %>
-        <%= f.datetime_field :start_at %>
+      <div class="form-group">
+        <%= form_with model:@shift, local:true do |f| %>
+          <%= f.hidden_field :teacher_id, value: @teacher.id %>
+          <%= f.label :start_at, "開始時間" %>
+          <%= f.datetime_field :start_at %>
 
-        <%= f.submit"登録" %>
-      <% end %>
+          <%= f.submit"登録" %>
+        <% end %>
+      </div>
+    </div>
+
+    <div>
+      <%= link_to"削除", shift_path(@shift, :teacher_id => @shift.teacher_id), method: :delete, "data-confirm" => "本当にこの時間のシフトを削除しますか？", class: "btn btn-delete" %>
     </div>
 </div>

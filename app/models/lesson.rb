@@ -6,21 +6,20 @@ class Lesson < ApplicationRecord
   validates :student_id, presence: true
   validates :teacher_id, presence: true
   validates :subject_id, presence: true
-  validates :start_at, uniqueness: { scope: [:student_id, :teacher_id] }
+  validates :start_at, presence: true
 
-  # validate :student_validate
+  validate :student_validate
 
-  # def student_validate
-  #   # 生徒・start_atで検索
-  #   student_lesson = Lesson.where(start_at: start_at, student_id: student_id)
-  #   if student_lesson.present?
-  #     # データがある場合、登録できないためエラー
-
-  #     return false
-  #   else
-  #     # データがない場合は、登録する
-  #     return true
-  #   end
-  # end
+  def student_validate
+    # 生徒・start_atで検索
+    student_lesson = Lesson.where('shifts.start_at >= ?', start_at.in_time_zone).where(student_id: student_id)
+    if student_lesson.present?
+      # データがある場合、登録できないためエラー
+    #   redirect_to lessons_path
+    # else
+    #   # データがない場合は、登録する
+    #   render :new
+    end
+  end
 
 end
