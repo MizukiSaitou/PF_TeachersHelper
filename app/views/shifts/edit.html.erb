@@ -6,7 +6,7 @@
          <th class="table-bordered table-secondary text-center" style="width: 80px">講師名</th>
          <td class="table-bordered table-light text-center" style="width: 150px"><%= @teacher.name %></td>
          <td style="width: 50px"></td>
-         <td class="text-center" style="width: 150px"><%= link_to "シフト画面に戻る",shifts_path(teacher_id: @teacher.id) %></td>
+         <td class="text-center" style="width: 150px"><%= link_to "シフトに戻る",shifts_path(teacher_id: @teacher.id), class: "btn btn-back" %></td>
       </tr>
     </table>
   </div>
@@ -22,7 +22,7 @@
           <%= f.hidden_field :teacher_id, value: @teacher.id %>
           <%= f.label :start_at, "開始時間" %>
           <%= f.datetime_field :start_at %>
-  
+
           <%= f.submit"登録" %>
         <% end %>
       </div>
