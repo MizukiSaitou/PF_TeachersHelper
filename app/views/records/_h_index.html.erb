@@ -183,7 +183,7 @@
         <td><%= record.japanese_history_score %></td>
         <td><%= record.world_history_score %></td>
         <td><%= record.geograpy_score %></td>
-        <td><%= link_to"削除",record_path(record.id, :student_id => student.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+        <td><%= link_to"削除",record_path(record.id, :student_id => student.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-delete btn-sm" %></td>
       </tr>
       <% end %>
       <% end %>
@@ -234,7 +234,7 @@
               <td><%= record.japanese_history_accademic_result %></td>
               <td><%= record.world_history_accademic_result %></td>
               <td><%= record.geograpy_accademic_result %></td>
-              <td><%= link_to"削除",record_path(record.id, :student_id => student.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+              <td><%= link_to"削除",record_path(record.id, :student_id => student.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-delete btn-sm" %></td>
             </tr>
           <% end %>
         <% end %>

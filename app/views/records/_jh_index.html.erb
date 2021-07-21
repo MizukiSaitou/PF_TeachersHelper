@@ -112,7 +112,7 @@
             <td><%= record.japanese_score %></td>
             <td><%= record.science_score %></td>
             <td><%= record.social_study_score %></td>
-            <td><%= link_to"削除",record_path(record.id, :student_id => student.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+            <td><%= link_to"削除",record_path(record.id, :student_id => student.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-delete btn-sm" %></td>
           </tr>
         <% end %>
       <% end %>
@@ -154,7 +154,7 @@
               <td><%= record.music_academic_result %></td>
               <td><%= record.pe_academic_result %></td>
               <td><%= record.te_academic_result %></td>
-              <td> <%= link_to"削除",record_path(record.id, :student_id => student.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+              <td> <%= link_to"削除",record_path(record.id, :student_id => student.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-delete btn-sm" %></td>
             </tr>
           <% end %>
         <% end %>
