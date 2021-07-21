@@ -1,42 +1,40 @@
-<div class="lesson-box">
-  <div class="container">
-    <div class="row mx-auto">
-      <h1>授業一覧</h1>
-      <table  class="table table-bordered text-center">
-        <thead class="table-secondary">
-            <tr>
-              <th style="width: 20%">授業日時</th>
-              <th style="width: 30%">生徒名</th>
-              <th style="width: 10%">授業科目</th>
-              <th style="width: 30%">担当講師名</th>
-              <th style="width: 10%"></th>
-            </tr>
-        </thead>
+<div class="container">
+  <div class="row mx-auto">
+    <h1>授業一覧</h1>
+    <table  class="table table-bordered text-center">
+      <thead class="table-secondary">
+          <tr>
+            <th style="width: 20%">授業日時</th>
+            <th style="width: 30%">生徒名</th>
+            <th style="width: 10%">授業科目</th>
+            <th style="width: 30%">担当講師名</th>
+            <th style="width: 10%"></th>
+          </tr>
+      </thead>
 
-        <tbody class="table-light">
-          <% @lessons.each do |lesson| %>
-            <tr>
-              <td>
-                <%= link_to edit_lesson_path(lesson) do %>
-                  <%= lesson.start_at.strftime("%Y-%m-%d %H:%M") %>
-                <% end %>
-              </td>
-              <td>
-                <!--%= link_to student_path(@student) do %>-->
-                  <%= lesson.student.name %>
-                <!--% end %>-->
-              </td>
-              <td><%= lesson.subject.subject_name %></td>
-              <td>
-                <!--%= link_to teacher_path(@teacher) do %>-->
-                  <%= lesson.teacher.name %>
-                <!--% end %>-->
-              </td>
-              <td><%= link_to"削除", lesson_path(lesson), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
+      <tbody class="table-light">
+        <% @lessons.each do |lesson| %>
+          <tr>
+            <td>
+              <%= link_to edit_lesson_path(lesson) do %>
+                <%= lesson.start_at.strftime("%Y年%m月%d日 %H:%M") %>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to student_path(lesson.student.id) do %>
+                <%= lesson.student.name %>
+              <% end %>
+            </td>
+            <td><%= lesson.subject.subject_name %></td>
+            <td>
+              <%= link_to teacher_path(lesson.teacher_id) do %>
+                <%= lesson.teacher.name %>
+              <% end %>
+            </td>
+            <td><%= link_to"削除", lesson_path(lesson), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 </div>
