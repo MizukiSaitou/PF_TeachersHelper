@@ -104,7 +104,7 @@
         <% if record.test_name.present? %>
           <tr class="table-light">
             <td>
-              <%= link_to edit_record_path(record, :student_id => student.id) do %>
+              <%= link_to(edit_record_path(record, :student_id => student.id), class:"name") do %>
     　          <%= record.test_name %></td>
     　        <% end %>
             <td><%= record.english_score %></td>
@@ -141,7 +141,7 @@
           <% if record.semester_name.present? %>
             <tr class="table-light">
               <td>
-                <%= link_to edit_record_path(record, :student_id => student.id) do %>
+                <%= link_to(edit_record_path(record, :student_id => student.id), class:"name") do %>
                   <%= record.semester_name %>
                 <% end %>
               </td>

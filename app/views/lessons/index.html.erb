@@ -16,18 +16,18 @@
         <% @lessons.each do |lesson| %>
           <tr>
             <td>
-              <%= link_to edit_lesson_path(lesson) do %>
+              <%= link_to(edit_lesson_path(lesson),class:"list") do %>
                 <%= lesson.start_at.strftime("%Y年%m月%d日 %H:%M") %>
               <% end %>
             </td>
             <td>
-              <%= link_to student_path(lesson.student.id) do %>
+              <%= link_to(student_path(lesson.student.id),class:"list") do %>
                 <%= lesson.student.name %>
               <% end %>
             </td>
             <td><%= lesson.subject.subject_name %></td>
             <td>
-              <%= link_to teacher_path(lesson.teacher_id) do %>
+              <%= link_to(teacher_path(lesson.teacher_id),class:"list") do %>
                 <%= lesson.teacher.name %>
               <% end %>
             </td>

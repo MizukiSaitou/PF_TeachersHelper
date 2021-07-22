@@ -9,17 +9,27 @@ class Lesson < ApplicationRecord
   validates :start_at, presence: true
 
   validate :student_validate
+  validate :teacher_validate
 
+  private
+
+  # 生徒が同じ日の同時刻に授業が登録されている場合、授業を組めなくする
   def student_validate
-    # 生徒・start_atで検索
-    student_lesson = Lesson.where('shifts.start_at >= ?', start_at.in_time_zone).where(student_id: student_id)
-    if student_lesson.present?
-      # データがある場合、登録できないためエラー
-    #   redirect_to lessons_path
-    # else
-    #   # データがない場合は、登録する
-    #   render :new
+
+    exist = Lesson.where(student_id: self.student_id, start_at: self.start_at)
+    if exist.present?
+      errors.add(:base, "この生徒はすでに同日同時刻に授業を組んでいます。")
     end
+  end
+
+  # 講師がシフトが組まれている日/時刻で授業が組めないようにする。
+  def teacher_validate
+
+    exist = Lesson.where(teacher_id: self.teacher_id, start_at: self.start_at)
+    if exist.present?
+      errors.add(:base, "選択された講師はすでに授業が組まれています。")
+    end
+
   end
 
 end

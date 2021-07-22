@@ -44,11 +44,13 @@ header,footer{
    background-image: image-url('menu.jpg');
  }
 
-.link {
-  text-decoration: none;
+.no-underline {
+  text-decoration:none !important;
   color: white;
-  hover{text-decoration: none;}
-  hover{color: white;}
+ }
+
+ .no-underline:hover {
+  color: yellow;
  }
 
 .top-box {

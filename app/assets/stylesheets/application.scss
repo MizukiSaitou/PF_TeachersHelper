@@ -76,3 +76,14 @@ footer {
   background-color:#5D99FF	;
   border-color:#5D99FF	;
 }
+
+.name{
+  border-bottom:dotted;
+  border-color:#808080;
+  border-width:1px;
+  color:#808080;
+}
+
+.name:hover{
+  text-decoration:none !important;
+}

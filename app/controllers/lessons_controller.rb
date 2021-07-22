@@ -40,7 +40,8 @@ class LessonsController < ApplicationController
     if @lesson.save
        redirect_to lessons_path
     else
-       render :new
+      # エラーの場合、newメソッドにてparamsのデータが足りないためエラーになる
+      redirect_to new_lesson_path
     end
   end
 
