@@ -4,7 +4,7 @@
       <div class="col-md-3">
         <% if @teacher.is_deleted == false %>
         <div class="new">
-          <%= link_to"シフト確認", shifts_path(teacher_id: @teacher.id) %>
+          <%= link_to"シフト確認", shifts_path(teacher_id: @teacher.id), class: "btn btn-option" %>
         </div>
         <% end %>
       </div>
@@ -64,11 +64,11 @@
         </ul>
 
         <div class="edit mt-3">
-          <%= link_to"講師情報変更", edit_teacher_path(@teacher) %>
+          <%= link_to"講師情報変更", edit_teacher_path(@teacher), class: "btn btn-edit" %>
         </div>
 
-        <div class="back">
-          <%= link_to "講師一覧に戻る", teachers_path %>
+        <div class="mt-3">
+          <%= link_to "講師一覧に戻る", teachers_path, class: "btn btn-back" %>
         </div>
 
       </div>

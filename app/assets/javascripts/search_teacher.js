@@ -24,7 +24,6 @@ $(document).on('turbolinks:load', function(){
    　`
       <input name='lesson[teacher_id]' type='hidden' value="${id}">
         <p class="selected_teacher-name">${name}</p>`
-
   　$("#selected_teacher").append(html);
     }
 
@@ -32,7 +31,7 @@ $(document).on('turbolinks:load', function(){
   inputForm.on('click', function(){
     const startAt = $('#lesson_start_at').val();
     const subject = $('#lesson_subject_id').val();
-
+    $("#selected_teacher").empty();
     search(startAt, subject);
   });
 

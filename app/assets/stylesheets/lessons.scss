@@ -12,3 +12,14 @@
 .text{
   font-size: 20px;
 }
+
+.list{
+  border-bottom:dotted;
+  border-color:#808080;
+  border-width:1px;
+  color:#808080;
+}
+
+.list:hover{
+  text-decoration:none !important;
+}

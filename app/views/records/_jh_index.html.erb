@@ -104,7 +104,7 @@
         <% if record.test_name.present? %>
           <tr class="table-light">
             <td>
-              <%= link_to edit_record_path(record, :student_id => student.id) do %>
+              <%= link_to(edit_record_path(record, :student_id => student.id), class:"name") do %>
     　          <%= record.test_name %></td>
     　        <% end %>
             <td><%= record.english_score %></td>
@@ -112,7 +112,7 @@
             <td><%= record.japanese_score %></td>
             <td><%= record.science_score %></td>
             <td><%= record.social_study_score %></td>
-            <td><%= link_to"削除",record_path(record.id, :student_id => student.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+            <td><%= link_to"削除",record_path(record.id, :student_id => student.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-delete btn-sm" %></td>
           </tr>
         <% end %>
       <% end %>
@@ -141,7 +141,7 @@
           <% if record.semester_name.present? %>
             <tr class="table-light">
               <td>
-                <%= link_to edit_record_path(record, :student_id => student.id) do %>
+                <%= link_to(edit_record_path(record, :student_id => student.id), class:"name") do %>
                   <%= record.semester_name %>
                 <% end %>
               </td>
@@ -154,7 +154,7 @@
               <td><%= record.music_academic_result %></td>
               <td><%= record.pe_academic_result %></td>
               <td><%= record.te_academic_result %></td>
-              <td> <%= link_to"削除",record_path(record.id, :student_id => student.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+              <td> <%= link_to"削除",record_path(record.id, :student_id => student.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-delete btn-sm" %></td>
             </tr>
           <% end %>
         <% end %>

@@ -58,3 +58,32 @@ footer {
   background-color: #708090;
   border-color:#708090;
 }
+
+.btn-edit{
+  color: #000;
+  background-color: #FFFF33;
+  border-color:#FFFF33;
+}
+
+.btn-option{
+  color: #000;
+  background-color: #00FA9A;
+  border-color:#00FA9A;
+}
+
+.btn-record{
+  color: #000;
+  background-color:#5D99FF	;
+  border-color:#5D99FF	;
+}
+
+.name{
+  border-bottom:dotted;
+  border-color:#808080;
+  border-width:1px;
+  color:#808080;
+}
+
+.name:hover{
+  text-decoration:none !important;
+}

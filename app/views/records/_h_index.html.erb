@@ -139,8 +139,8 @@
         <% end %>
     </div>
   </div>
-  
-  
+
+
   <div class="row mt-5">
     <h2>テスト結果</h2>
     <table class="table table-bordered border text-center">
@@ -166,7 +166,7 @@
       <% if record.test_name.present? %>
       <tr class="table-light">
         <td>
-          <%= link_to edit_record_path(record, :student_id => student.id) do %>
+          <%= link_to(edit_record_path(record, :student_id => student.id), class:"name") do %>
             <%= record.test_name %>
           <% end %>
         </td>
@@ -183,7 +183,7 @@
         <td><%= record.japanese_history_score %></td>
         <td><%= record.world_history_score %></td>
         <td><%= record.geograpy_score %></td>
-        <td><%= link_to"削除",record_path(record.id, :student_id => student.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+        <td><%= link_to"削除",record_path(record.id, :student_id => student.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-delete btn-sm" %></td>
       </tr>
       <% end %>
       <% end %>
@@ -212,12 +212,12 @@
               <th>地理</th>
               <th></th>
             </tr>
-  
+
         <% records.each do |record| %>
           <% if record.semester_name.present? %>
-            <tr class="rtable-light">
+            <tr class="table-light">
               <td>
-                <% link_to edit_record_path(record, :student_id => student.id) do %>
+                <%= link_to(edit_record_path(record, :student_id => student.id), class:"name") do %>
                   <%= record.semester_name %>
                 <% end %>
               </td>
@@ -234,10 +234,9 @@
               <td><%= record.japanese_history_accademic_result %></td>
               <td><%= record.world_history_accademic_result %></td>
               <td><%= record.geograpy_accademic_result %></td>
-              <td><%= link_to"削除",record_path(record.id, :student_id => student.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+              <td><%= link_to"削除",record_path(record.id, :student_id => student.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-delete btn-sm" %></td>
             </tr>
           <% end %>
         <% end %>
     </table>
   </div>
-  

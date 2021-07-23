@@ -40,6 +40,11 @@ class LessonsController < ApplicationController
     if @lesson.save
        redirect_to lessons_path
     else
+      # エラーの場合、newメソッドにてparamsのデータが足りないためエラーになる
+      @student =  @lesson.student
+      @belong_subject_ids = @student.subjects.ids
+      @subjects = Subject.where(id: @belong_subject_ids)
+      @subject = Subject.all
        render :new
     end
   end
@@ -49,6 +54,10 @@ class LessonsController < ApplicationController
     if @lesson.update(lesson_params)
        redirect_to lessons_path
     else
+      @student =  @lesson.student
+      @belong_subject_ids = @student.subjects.ids
+      @subjects = Subject.where(id: @belong_subject_ids)
+      @subject = Subject.all
        render :edit
     end
   end
