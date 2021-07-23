@@ -37,7 +37,8 @@ h1{
 
 
 .container {
-      padding-bottom: 60px;
+      padding-top: 30px;
+      padding-bottom: 30px;
       box-sizing: border-box;
 }
 
@@ -86,4 +87,29 @@ footer {
 
 .name:hover{
   text-decoration:none !important;
+}
+
+.top-box {
+  height: 500px;
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: white;
+  border: solid 3px;
+  border-color:  #191970;
+}
+
+.devise-text{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 80%;
+  height: 50%;
+}
+
+.devise-link {
+  padding-top: 5px;
 }
