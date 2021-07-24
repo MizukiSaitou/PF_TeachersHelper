@@ -23,13 +23,14 @@
 
 ## 設計書
 ER図.
-<https://drive.google.com/file/d/1BuvmuBPhLjyY3mcPMvMvvS5MQ2eY7EJL/view?usp=sharing>.
-テーブル定義書（途中）.
-<https://drive.google.com/file/d/1GPJqAhUv8bmJmBsr-nSuXawMIVE3MiGz/view?usp=sharing>.
-ワイヤーフレーム.
-<https://drive.google.com/file/d/1kHLQK_NYFGVCMOLzU9Y31ObXuZciGloT/view?usp=sharing>.
+![B6B24970-7B9B-4BB3-9672-5EEF64217101](https://user-images.githubusercontent.com/81802888/126858693-19a98fb4-d098-4280-8528-35c91fc0a56f.png)
 画面遷移図.
-<https://drive.google.com/file/d/10gmUbv2F7zSPFG_MKaCz6xfHhedUJu9w/view?usp=sharing>.
+![07E9B42E-8E99-4853-BEE0-C235FBF271E0](https://user-images.githubusercontent.com/81802888/126858685-3bd8fde6-1486-4959-8905-077bfcc6f466.png)
+
+テーブル定義書
+<https://drive.google.com/file/d/1GPJqAhUv8bmJmBsr-nSuXawMIVE3MiGz/view?usp=sharing>.
+アプリケーション詳細設定.
+<https://docs.google.com/spreadsheets/d/1wmpHAW4JuakGDOMP2EDlWnnHuIaUHQzRuDxkjPtAXT0/edit?usp=sharing>.
 
 
 ## チャレンジ要素一覧
