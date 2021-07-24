@@ -27,8 +27,8 @@ ER図.
 画面遷移図.
 ![07E9B42E-8E99-4853-BEE0-C235FBF271E0](https://user-images.githubusercontent.com/81802888/126858685-3bd8fde6-1486-4959-8905-077bfcc6f466.png)
 
-テーブル定義書. <https://drive.google.com/file/d/1GPJqAhUv8bmJmBsr-nSuXawMIVE3MiGz/view?usp=sharing>.
-アプリケーション詳細設定. <https://docs.google.com/spreadsheets/d/1wmpHAW4JuakGDOMP2EDlWnnHuIaUHQzRuDxkjPtAXT0/edit?usp=sharing>.
+テーブル定義書  <https://drive.google.com/file/d/1GPJqAhUv8bmJmBsr-nSuXawMIVE3MiGz/view?usp=sharing> 
+アプリケーション詳細設定  <https://docs.google.com/spreadsheets/d/1wmpHAW4JuakGDOMP2EDlWnnHuIaUHQzRuDxkjPtAXT0/edit?usp=sharing> 
 
 
 ## チャレンジ要素一覧
