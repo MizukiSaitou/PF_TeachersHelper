@@ -31,13 +31,13 @@
                 <%= lesson.teacher.name %>
               <% end %>
             </td>
-            <td><%= link_to"削除", lesson_path(lesson), method: :delete, "data-confirm" => "本当にこの授業を削除しますか？", class: "btn btn-delete btn-sm" %></td>
+            <td><%= link_to"削除", lesson_path(lesson), method: :delete, data: {confirm:'本当にこの授業を削除しますか？'}, class: "btn btn-delete btn-sm" %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
-    
+
     <%= paginate @lessons %>
-    
+
   </div>
 </div>
