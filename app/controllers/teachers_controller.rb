@@ -1,6 +1,6 @@
 class TeachersController < ApplicationController
 
-  before_action :authenticate_user!, except: [:top]
+  before_action :authenticate_user!
 
   def index
     @teachers = Teacher.order(:name).page(params[:page]).per(10).search(params[:search])

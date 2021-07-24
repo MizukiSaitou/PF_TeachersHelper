@@ -1,5 +1,7 @@
 class LessonsController < ApplicationController
 
+  before_action :authenticate_user!
+
   def index
     @lessons = Lesson.order(start_at: :desc).page(params[:page]).per(10)
   end
