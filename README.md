@@ -23,12 +23,13 @@
 
 ## 設計書
 ER図.
-![B6B24970-7B9B-4BB3-9672-5EEF64217101](https://user-images.githubusercontent.com/81802888/126858693-19a98fb4-d098-4280-8528-35c91fc0a56f.png)
-画面遷移図.
-![07E9B42E-8E99-4853-BEE0-C235FBF271E0](https://user-images.githubusercontent.com/81802888/126858685-3bd8fde6-1486-4959-8905-077bfcc6f466.png)
+![ER図](https://user-images.githubusercontent.com/81802888/126859422-2e009096-eaf5-4ae5-8a87-0a0009aada6f.png)
 
-テーブル定義書. <https://drive.google.com/file/d/1GPJqAhUv8bmJmBsr-nSuXawMIVE3MiGz/view?usp=sharing>.
-アプリケーション詳細設定. <https://docs.google.com/spreadsheets/d/1wmpHAW4JuakGDOMP2EDlWnnHuIaUHQzRuDxkjPtAXT0/edit?usp=sharing>.
+画面遷移図.
+![UI](https://user-images.githubusercontent.com/81802888/126859610-dba2ab69-6b90-49e6-a3c4-ffee0e2ea988.png)
+
+テーブル定義書  <https://drive.google.com/file/d/1GPJqAhUv8bmJmBsr-nSuXawMIVE3MiGz/view?usp=sharing>
+アプリケーション詳細設定  <https://docs.google.com/spreadsheets/d/1wmpHAW4JuakGDOMP2EDlWnnHuIaUHQzRuDxkjPtAXT0/edit?usp=sharing>.
 
 
 ## チャレンジ要素一覧
