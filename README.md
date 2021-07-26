@@ -23,7 +23,7 @@
 
 ## 設計書
 ER図
-![ER図](https://user-images.githubusercontent.com/81802888/126859422-2e009096-eaf5-4ae5-8a87-0a0009aada6f.png)
+![ER図](https://user-images.githubusercontent.com/81802888/126987668-3f7b21e5-cdd1-418e-81a8-f1dbbed4c077.png)
 
 画面遷移図
 ![UI](https://user-images.githubusercontent.com/81802888/126859610-dba2ab69-6b90-49e6-a3c4-ffee0e2ea988.png)
