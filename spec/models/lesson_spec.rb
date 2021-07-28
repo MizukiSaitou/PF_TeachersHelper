@@ -2,4 +2,73 @@ require 'rails_helper'
 
 RSpec.describe Lesson, type: :model do
   pending "add some examples to (or delete) #{__FILE__}"
+  describe 'バリデーションのテスト' do
+    subject { lesson.valid? }
+
+    let(:student) { create(:student) }
+    let(:teacher) { create(:teacher) }
+    let(:teacher) { create(:teacher) }
+    let!(:lesson) { build(:lesson, user_id: user.id) }
+
+    context 'titleカラム' do
+      it '空欄でないこと' do
+        event.title = ''
+        is_expected.to eq false
+      end
+      it '100文字以下であること: 100文字はOK' do
+        event.title = Faker::Lorem.characters(number: 100)
+        is_expected.to eq true
+      end
+      it '100文字以下であること: 101文字はNG' do
+        event.title = Faker::Lorem.characters(number: 101)
+        is_expected.to eq false
+      end
+    end
+    context 'bodyカラム' do
+      it '空欄でないこと' do
+        event.body = ''
+        is_expected.to eq false
+      end
+    end
+    context 'locationカラム' do
+      it '空欄でないこと' do
+        event.location = ''
+        is_expected.to eq false
+      end
+    end
+    context 'start_dateカラム' do
+      it '空欄でないこと' do
+        event.start_date = ''
+        is_expected.to eq false
+      end
+    end
+    context 'end_dateカラム' do
+      it '空欄でないこと' do
+        event.end_date = ''
+        is_expected.to eq false
+      end
+    end
+  end
+  describe 'アソシエーションのテスト' do
+    context 'Userモデルとの関係' do
+      it 'N:1の関係になっている' do
+        expect(Event.reflect_on_association(:user).macro).to eq :belongs_to
+      end
+    end
+    context 'EventCommentモデルとの関係' do
+      it '1:Nの関係になっている' do
+        expect(Event.reflect_on_association(:event_comments).macro).to eq :has_many
+      end
+    end
+    context 'Notificationモデルとの関係' do
+      it '1:Nの関係になっている' do
+        expect(Event.reflect_on_association(:notifications).macro).to eq :has_many
+      end
+    end
+    context 'Favoriteモデルとの関係' do
+      it '1:Nの関係になっている' do
+        expect(Event.reflect_on_association(:favorites).macro).to eq :has_many
+      end
+    end
+  end
 end

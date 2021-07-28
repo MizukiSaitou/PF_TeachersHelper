@@ -45,26 +45,32 @@ RSpec.describe Student, type: :model do
       end
     end
   end
-  
+
   describe 'アソシエーションのテスト' do
+    
     context 'Teacherモデルとの関係' do
-      it 'N:1の関係になっている' do
-        expect(Event.reflect_on_association(:user).macro).to eq :belongs_to
+      it 'N:Nの関係になっている' do
+        expect(Student.reflect_on_association(:teachers).macro).to eq :has_many
       end
     end
-    context 'EventCommentモデルとの関係' do
+    context 'Lessonモデルとの関係' do
       it '1:Nの関係になっている' do
-        expect(Event.reflect_on_association(:event_comments).macro).to eq :has_many
+        expect(Student.reflect_on_association(:lessons).macro).to eq :has_many
       end
     end
-    context 'Notificationモデルとの関係' do
+    context 'Recordモデルとの関係' do
       it '1:Nの関係になっている' do
-        expect(Event.reflect_on_association(:notifications).macro).to eq :has_many
+        expect(Student.reflect_on_association(:records).macro).to eq :has_many
       end
     end
-    context 'Favoriteモデルとの関係' do
+    context 'SubjectStudentモデルとの関係' do
       it '1:Nの関係になっている' do
-        expect(Event.reflect_on_association(:favorites).macro).to eq :has_many
+        expect(Student.reflect_on_association(:subject_students).macro).to eq :has_many
+      end
+    end
+     context 'Subjectモデルとの関係' do
+      it '1:Nの関係になっている' do
+        expect(Student.reflect_on_association(:subjects).macro).to eq :has_many
       end
     end
   end

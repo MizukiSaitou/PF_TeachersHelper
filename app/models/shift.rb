@@ -1,6 +1,7 @@
 class Shift < ApplicationRecord
 
   belongs_to :teacher
+
   validates :teacher_id, presence: true
   validates :start_at, presence: true
 
