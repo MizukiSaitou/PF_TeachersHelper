@@ -32,7 +32,7 @@ class LessonsController < ApplicationController
 
     respond_to do |format|
       format.html #htmlを読み込んであげないとエラーが出るのでしっかりと記述
-      format.json {render json: @teachers}
+      format.json { render json: @teachers }
     end
 
   end
@@ -40,34 +40,34 @@ class LessonsController < ApplicationController
   def create
     @lesson = Lesson.new(lesson_params)
     if @lesson.save
-       redirect_to lessons_path
+     redirect_to lessons_path
     else
       # エラーの場合、newメソッドにてparamsのデータが足りないためエラーになる
       @student =  @lesson.student
       @belong_subject_ids = @student.subjects.ids
       @subjects = Subject.where(id: @belong_subject_ids)
       @subject = Subject.all
-       render :new
+      render :new
     end
   end
 
   def update
     @lesson = Lesson.find(params[:id])
     if @lesson.update(lesson_params)
-       redirect_to lessons_path
+     redirect_to lessons_path
     else
-      @student =  @lesson.student
+      @student = @lesson.student
       @belong_subject_ids = @student.subjects.ids
       @subjects = Subject.where(id: @belong_subject_ids)
       @subject = Subject.all
-       render :edit
+     render :edit
     end
   end
 
   def destroy
     @lesson = Lesson.find(params[:id])
     @lesson.destroy
-     redirect_to lessons_path
+    redirect_to lessons_path
   end
 
 

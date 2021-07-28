@@ -50,9 +50,9 @@ class TeachersController < ApplicationController
     params[:teacher][:subject_ids].each do |id|
       @teacher.subject_teachers.create(subject_id: id)
     end
-      redirect_to teacher_path(@teacher)
+    redirect_to teacher_path(@teacher)
     else
-      render :edit
+    render :edit
     end
   end
 

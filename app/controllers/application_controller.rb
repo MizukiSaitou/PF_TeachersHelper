@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-   before_action :configure_permitted_parameters, if: :devise_controller?
+
+before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
 
@@ -8,10 +9,10 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    menu_path
+     menu_path
   end
 
   def after_sign_up_path_for(resource)
-  　menu_path
+  　 menu_path
   end
 end

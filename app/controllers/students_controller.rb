@@ -32,10 +32,10 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new(student_params)
     if @student.save
-      redirect_to student_path(@student)
+     redirect_to student_path(@student)
     else
       @subjects = Subject.all
-      render :new
+     render :new
     end
   end
 
