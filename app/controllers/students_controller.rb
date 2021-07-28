@@ -5,9 +5,9 @@ class StudentsController < ApplicationController
 
   def index
     @students = Student.order(:name).page(params[:page]).per(10).search(params[:search])
-    # respond_to はリクエストに応じた処理を行うメソッド。
+    # respond_to はリクエストに応じた処理を行うメソッド
     # viewのlink_toでformatをcsvとして指定している
-    # リンクを押すとsend_posts_csv(@students)の処理を行う。
+    # リンクを押すとsend_posts_csv(@students)の処理を行う
     respond_to do |format|
       format.html
       format.csv do |csv|
@@ -34,6 +34,7 @@ class StudentsController < ApplicationController
     if @student.save
       redirect_to student_path(@student)
     else
+      @subjects = Subject.all
       render :new
     end
   end
@@ -74,9 +75,9 @@ class StudentsController < ApplicationController
     csv_data = CSV.generate do |csv|
       # %w()は、空白で区切って配列を返す
       column_names = %w(生徒名 学校名 学年 在籍)
-      # csv << column_namesは表の列に入る名前を定義します。
+      # csv << column_namesは表の列に入る名前を定義
       csv << column_names
-      # column_valuesに代入するカラム値を定義。
+      # column_valuesに代入するカラム値を定義
       students.each do |student|
         column_values = [
           student.name,
@@ -84,11 +85,11 @@ class StudentsController < ApplicationController
           student.grade,
           student.is_deleted
                 ]
-      # csv << column_valueshは表の行に入る値を定義。
+      # csv << column_valueshは表の行に入る値を定義
         csv << column_values
       end
     end
-    # csv出力のファイル名を定義。
+    # csv出力のファイル名を定義
     send_data(csv_data, filename: "生徒一覧.csv")
   end
 

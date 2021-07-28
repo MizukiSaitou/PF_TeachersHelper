@@ -29,6 +29,7 @@ class TeachersController < ApplicationController
     if @teacher.save
       redirect_to teacher_path(@teacher)
     else
+      @subjects = Subject.all
       render :new
     end
   end
@@ -62,13 +63,13 @@ class TeachersController < ApplicationController
   end
 
   def send_posts_csv(teachers)
-    
+
     csv_data = CSV.generate do |csv|
-     
+
       column_names = %w(講師名 大学　学部名 学年)
-      
+
       csv << column_names
-      
+
       teachers.each do |teacher|
         column_values = [
           teacher.name,

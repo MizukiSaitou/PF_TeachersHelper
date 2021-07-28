@@ -22,7 +22,7 @@ class Student < ApplicationRecord
  def self.search(search) #self.はStudent.を意味する
      if search
        where(['name LIKE ? OR school LIKE ?', "%#{search}%", "%#{search}%"]) #検索とnameとschoolの部分一致を表示。
-     else  
+     else
        all #全て表示させる
      end
  end
