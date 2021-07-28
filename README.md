@@ -44,5 +44,6 @@ ER図
 - IDE：Cloud9
 
 ## 使用素材
-- 今後追加予定
+- shutter stock <https://www.shutterstock.com/ja/home>
+- hatchful <https://hatchful.shopify.com/ja/>
 
