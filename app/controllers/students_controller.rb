@@ -83,7 +83,6 @@ class StudentsController < ApplicationController
           student.name,
           student.school,
           student.grade,
-          student.is_deleted
                 ]
       # csv << column_valueshは表の行に入る値を定義
         csv << column_values
