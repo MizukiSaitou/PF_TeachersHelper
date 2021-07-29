@@ -4,7 +4,7 @@
       <div class="mx-auto">
 
         <%= form_with model:@teacher, local:true do |f| %>
-
+        <%= render 'layouts/error', model: f.object %>
          <div class="form-group">
           <ul class="list-group list-group-horizontal">
             <li class="list-group-item" style="width: 200px;"><%= f.label :講師名 %></li>
