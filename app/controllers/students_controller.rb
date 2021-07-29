@@ -57,11 +57,10 @@ class StudentsController < ApplicationController
     end
       redirect_to student_path(@student)
     else
+      @subjects = Subject.all
       render :edit
     end
   end
-
-
 
 
   private

@@ -52,6 +52,7 @@ class TeachersController < ApplicationController
     end
     redirect_to teacher_path(@teacher)
     else
+    @subjects = Subject.all
     render :edit
     end
   end
