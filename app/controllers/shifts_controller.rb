@@ -14,6 +14,8 @@ class ShiftsController < ApplicationController
     if @shift.save
       redirect_to shifts_path(teacher_id: @shift.teacher.id)
     else
+      @teacher = @shift.teacher
+      @shifts = Shift.where(teacher_id: @teacher.id)
       render :index
     end
   end
