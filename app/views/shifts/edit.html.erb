@@ -19,6 +19,7 @@
     <div class="row ml-3 my-3">
       <div class="form-group">
         <%= form_with model:@shift, local:true do |f| %>
+        <%= render 'layouts/error', model: f.object %>
           <%= f.hidden_field :teacher_id, value: @teacher.id %>
           <%= f.label :start_at, "開始時間" %>
           <%= f.datetime_field :start_at %>

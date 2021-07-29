@@ -31,6 +31,7 @@ class ShiftsController < ApplicationController
     if @shift.update(shift_params)
       redirect_to  shifts_path(teacher_id: @shift.teacher_id)
     else
+      @teacher = @shift.teacher
       render :edit
     end
   end
