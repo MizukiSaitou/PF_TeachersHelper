@@ -42,11 +42,8 @@ class TeachersController < ApplicationController
   def update
     @teacher = Teacher.find(params[:id])
     if @teacher.update(teacher_params)
-      # 1つ目の空データの削除
     params[:teacher][:subject_ids].delete_at(0)
-      # 元ある科目を削除
     @teacher.subject_teachers.destroy_all
-    # 再度作り直す
     params[:teacher][:subject_ids].each do |id|
       @teacher.subject_teachers.create(subject_id: id)
     end
