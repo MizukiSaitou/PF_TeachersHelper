@@ -1,5 +1,7 @@
 # Teacher's Helper
 
+![D0253C1C-E36E-4969-96F7-A6EBA3923F2B](https://user-images.githubusercontent.com/81802888/130174033-bf460529-a3bf-48b5-a4de-e17430d53115.png)
+
 ## サイト概要
 個別指導の塾において生徒と講師の組み合わせは非常に重要であり、業務の中でもコマ組の変更がかなり要望として多い。
 ボタンを一つ押せばその時間に生徒を受け持っていない講師が一覧で表示されたり、科目によって講師を表示できたりできる。
@@ -23,7 +25,7 @@
 
 ## 設計書
 ER図
-![ER図](https://user-images.githubusercontent.com/81802888/127140475-0e2997d6-014d-4e73-a3c3-5d9716ff0ea5.png)
+![ER図](https://user-images.githubusercontent.com/81802888/130173933-6593ed72-7e5b-496f-ab6e-020071da9d13.png)
 
 画面遷移図
 ![UI](https://user-images.githubusercontent.com/81802888/126859610-dba2ab69-6b90-49e6-a3c4-ffee0e2ea988.png)
