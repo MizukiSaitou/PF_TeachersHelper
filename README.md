@@ -24,7 +24,7 @@
 個別指導塾の運営時
 
 ## 設計書
-ER図
+* ER図
 <details>
   <summary>クリックしてください</summary>
 
@@ -32,7 +32,7 @@ ER図
 
 </details>
 
-画面遷移図
+* 画面遷移図
 <details>
   <summary>クリックしてください</summary>
 
@@ -40,7 +40,7 @@ ER図
 
 </details>
 
-テーブル定義書
+* テーブル定義書
 <details>
   <summary>クリックしてください</summary>
 
@@ -49,7 +49,7 @@ ER図
 
 </details>
 
-アプリケーション詳細設定
+* アプリケーション詳細設定
 <details>
   <summary>クリックしてください</summary>
 
