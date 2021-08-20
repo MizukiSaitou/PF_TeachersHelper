@@ -6,6 +6,7 @@
       <%= form_with url:students_path, method: :get, local: true do |f| %>
       　<%= f.label :search, "生徒名/学校名" %>
         <%= f.text_field :search %>
+        <%= f.select :is_deleted, [['在籍者',false],['退塾者',true]], {include_blank: '全員表示'} %>
         <%= f.submit"検索" ,:name => nil %>
       <% end %>
     </div>

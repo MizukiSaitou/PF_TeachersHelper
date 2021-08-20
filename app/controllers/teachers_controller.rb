@@ -4,6 +4,9 @@ class TeachersController < ApplicationController
 
   def index
     @teachers = Teacher.order(:name).page(params[:page]).per(10).search(params[:search])
+      if params[:is_deleted].present?
+        @teachers = @teachers.where(is_deleted: params[:is_deleted])
+      end
     respond_to do |format|
       format.html
       format.csv do |csv|

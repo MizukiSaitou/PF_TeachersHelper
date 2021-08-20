@@ -5,6 +5,9 @@ class StudentsController < ApplicationController
 
   def index
     @students = Student.order(:name).page(params[:page]).per(10).search(params[:search])
+      if params[:is_deleted].present?
+        @students = @students.where(is_deleted: params[:is_deleted])
+      end
     # respond_to はリクエストに応じた処理を行うメソッド
     # viewのlink_toでformatをcsvとして指定している
     # リンクを押すとsend_posts_csv(@students)の処理を行う
