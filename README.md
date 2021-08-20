@@ -25,14 +25,37 @@
 
 ## 設計書
 ER図
-![ER図](https://user-images.githubusercontent.com/81802888/130173933-6593ed72-7e5b-496f-ab6e-020071da9d13.png)
+<details>
+  <summary>クリックしてください</summary>
+
+  ![ER図](https://user-images.githubusercontent.com/81802888/130184768-b0f85616-0aaf-4652-8ace-9367420ae7f8.png)
+
+</details>
 
 画面遷移図
-![UI](https://user-images.githubusercontent.com/81802888/126859610-dba2ab69-6b90-49e6-a3c4-ffee0e2ea988.png)
+<details>
+  <summary>クリックしてください</summary>
 
+  ![UI](https://user-images.githubusercontent.com/81802888/126859610-dba2ab69-6b90-49e6-a3c4-ffee0e2ea988.png)
 
-- テーブル定義書  <https://drive.google.com/file/d/1GPJqAhUv8bmJmBsr-nSuXawMIVE3MiGz/view?usp=sharing>
-- アプリケーション詳細設定  <https://docs.google.com/spreadsheets/d/1wmpHAW4JuakGDOMP2EDlWnnHuIaUHQzRuDxkjPtAXT0/edit?usp=sharing>
+</details>
+
+テーブル定義書
+<details>
+  <summary>クリックしてください</summary>
+
+  ![テーブル定義書1](https://user-images.githubusercontent.com/81802888/130185009-95643396-3850-4070-a7e1-b4fdcb81f907.png)
+  ![テーブル定義書2](https://user-images.githubusercontent.com/81802888/130185059-d7c5f2ca-901d-452b-a2bb-71aaf9491a0b.png)
+
+</details>
+
+アプリケーション詳細設定
+<details>
+  <summary>クリックしてください</summary>
+
+  ![アプリケーション詳細設計](https://user-images.githubusercontent.com/81802888/130185285-c20ed0e5-e194-411a-b4ce-a0e1ea7988b8.png)
+
+</details>
 
 
 ## チャレンジ要素一覧
