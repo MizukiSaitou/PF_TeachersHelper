@@ -1,6 +1,17 @@
 <div class="container">
   <div class="row mx-auto">
     <h1>授業一覧</h1>
+
+     <div class="form-group">
+      <%= form_with url:lessons_path, method: :get, local: true do |f| %>
+      　<%= f.label :search, "生徒名/講師名" %>
+        <%= f.text_field :search %>
+        <%= f.label :search, "授業日時" %>
+        <%= f.datetime_field :start_at %>
+        <%= f.submit"検索" ,:name => nil %>
+      <% end %>
+    </div>
+
     <table  class="table table-bordered text-center">
       <thead class="table-secondary">
           <tr>

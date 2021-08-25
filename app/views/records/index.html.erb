@@ -1,4 +1,4 @@
-<div class="record-box">  
+<div class="record-box">
   <div class="container">
     <h1>成績一覧</h1>
       <div class="row mt-3">
@@ -11,7 +11,7 @@
                 <th style="width: 50%">生徒名</td>
               </tr>
             </thead>
-      
+
             <tbody class="table-light text-center">
               <tr>
                 <td><%= @student.school %></td>
@@ -21,14 +21,15 @@
             </tbody>
           </table>
         </div>
-  
+
+
     <% if @student.grade == '高校1年生' || @student.grade == '高校2年生' || @student.grade == '高校3年生' %>
       <%= render'records/h_index', record: @record, student: @student, records: @records %>
     <% else %>
       <%= render'records/jh_index', record: @record, student: @student, records: @records %>
     <% end %>
-  
+
      <%= link_to "戻る", student_path(@student), class: "btn btn-back" %>
-  
+
   </div>
 </div>
