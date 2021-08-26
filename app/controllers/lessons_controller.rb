@@ -3,7 +3,7 @@ class LessonsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @lessons = Lesson.order(start_at: :desc).page(params[:page]).per(10).search(params[:search])
+    @lessons = Lesson.search(params[:start_at]).order(start_at: :desc).page(params[:page]).per(10)
   end
 
   def new

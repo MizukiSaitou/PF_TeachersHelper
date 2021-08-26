@@ -34,15 +34,16 @@ class Lesson < ApplicationRecord
 
 
   def self.search(search)
-     if search
-       Lesson
-        .where(['start_at = ?', "%#{search}%"])
-        .joins(:student, :teacher)
-        .where(['students.name LIKE ?', "%#{search}%"])
-        .where(['teachers.name LIKE ?', "%#{search}%"])
-     else
-       Lesson.all #全て表示させる
-     end
+    if search.present?
+      search = Time.zone.parse(search).utc
+      Lesson.where('start_at = ?', search)
+        # .joins(:student, :teacher)
+        # .where(['students.name LIKE ?', "%#{search}%"])
+        # .where(['teachers.name LIKE ?', "%#{search}%"])
+    else
+      Lesson.all #全て表示させる
+    end
   end
+
 
 end
