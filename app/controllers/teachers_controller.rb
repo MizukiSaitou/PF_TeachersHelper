@@ -3,7 +3,7 @@ class TeachersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @teachers = Teacher.order(:name).page(params[:page]).per(10).search(params[:search])
+    @teachers = Teacher.search(params[:search]).order(:name).page(params[:page]).per(10)
       if params[:is_deleted].present?
         @teachers = @teachers.where(is_deleted: params[:is_deleted])
       end

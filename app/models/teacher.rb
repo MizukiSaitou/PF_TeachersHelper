@@ -20,7 +20,7 @@ class Teacher < ApplicationRecord
   end
 
   def self.search(search) #self.はStudent.を意味する
-    if search
+    if search.present?
       Teacher.where(['name LIKE ?', "%#{search}%"]) #検索とnameの部分一致を表示
     else
       Teacher.all #全て表示させる

@@ -4,7 +4,7 @@ class StudentsController < ApplicationController
   require 'csv'
 
   def index
-    @students = Student.order(:name).page(params[:page]).per(10).search(params[:search])
+    @students = Student.search(params[:search]).order(:name).page(params[:page]).per(10)
       if params[:is_deleted].present?
         @students = @students.where(is_deleted: params[:is_deleted])
       end
